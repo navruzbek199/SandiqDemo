@@ -1,0 +1,72 @@
+.login_footer {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    z-index: -1;
+    bottom: 0;
+    @media (max-width: 500px) {
+        position: relative;
+        top: 50px;
+    }
+    .login_page__footer {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        .left_text {
+            @media (max-width: 500px) {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            p {
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #ffffff;
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+        }
+
+        .right_text {
+            display: block;
+            align-items: center;
+            @media (max-width: 500px) {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            p {
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #ffffff;
+                margin-bottom: 10px;
+                margin-top: -32px;
+                @media (max-width: 500px) {
+                    margin: 0;
+                }
+            }
+
+            a {
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                color: #ffffff;
+                margin-top: 20px;
+                @media (max-width: 500px) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

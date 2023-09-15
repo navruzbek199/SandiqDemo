@@ -1,0 +1,165 @@
+.product_item {
+    background-color: #F3F6FA;
+    padding-bottom: 30px;
+    min-height: 86vh;
+
+    .blog_header {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px #CCDAEC;
+        position: relative;
+        padding: 20px 0;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .className_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                display: flex;
+                align-items: flex-end;
+
+                img {
+                    object-fit: contain;
+                    margin-right: 30px;
+                    cursor: pointer;
+                }
+
+                h4 {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: #4030A4;
+                    margin-bottom: 0px;
+                }
+            }
+
+            h6 {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #4030A4;
+                margin-bottom: 0;
+            }
+
+            .title {
+                p {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #0D2C54;
+                    line-height: 17px;
+                    margin-bottom: 0;
+                    margin-right: 5px;
+                }
+                span {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: #4030A4;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .tab_content{
+        table {
+            width: 100%;
+            border-collapse: collapse;
+    
+            .table__head {
+                background: #F3F6FA;
+                padding: 0 21px;
+    
+                tr {
+                    height: 56px;
+    
+                    th {
+                        font-family: 'SF Pro Display';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #A0ABBE;
+                        border: none;
+                        padding: 0 15px;
+                    }
+    
+                }
+    
+            }
+    
+            .table__body {
+                tr:nth-child(even) {
+                    background-color: #F6F7FB;
+                }
+    
+                td {
+                    height: 56px;
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #23222B;
+                    padding: 0 15px;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+    
+                .table_list {
+                    color: #4030A4;
+                    cursor: pointer;
+                }
+    
+                .table_list_phone {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #4030A4;
+                    cursor: pointer;
+                    border: 1px solid #4030A4;
+                    border-radius: 6px;
+                    padding: 7px 10px;
+                    max-width: 142px;
+    
+                    &:hover {
+                        background-color: #4030A4;
+                        color: #FFFFFF;
+                    }
+                }
+    
+                .table_edit {
+                    cursor: pointer;
+                    width: 50px;
+                    img {
+                        object-fit: contain;
+                    }
+                }
+                
+    
+                .table_code {
+                    cursor: pointer;
+                    width: 50px;
+                    img {
+                        object-fit: contain;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}

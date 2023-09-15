@@ -1,0 +1,59 @@
+.objects{
+    background-color: #F3F6FA;
+    padding-bottom: 30px;
+    height: 86vh;
+    .blog_header {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px #CCDAEC;
+        position: relative;
+        padding: 20px 0;
+        // margin-bottom: 40px;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .className_title {
+            display: flex;
+            align-items: center;
+            a{
+                position: relative;
+                text-decoration: none;
+                display: flex;
+                align-items: flex-start;
+                img {
+                    object-fit: contain;
+                    margin-right: 30px;
+                    cursor: pointer;
+                }
+                h4 {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: #4030A4;
+                    margin-bottom: 0px;
+                }
+            }
+            h6 {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #4030A4;
+                margin-bottom: 0;
+            }
+            span{
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: #23222B;
+                line-height: 17px;
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+}

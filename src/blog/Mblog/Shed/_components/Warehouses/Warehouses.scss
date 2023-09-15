@@ -1,0 +1,233 @@
+.warehouses{
+    background-color: #F3F6FA;
+    padding-bottom: 30px;
+    height: 86vh;
+    .blog_header {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px #CCDAEC;
+        position: relative;
+        padding: 20px 0;
+        // margin-bottom: 40px;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .className_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+                position: relative;
+                text-decoration: none;
+                display: flex;
+                align-items: flex-end;
+                img {
+                    object-fit: contain;
+                    margin-right: 30px;
+                    cursor: pointer;
+                }
+                h4 {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: #4030A4;
+                    margin-bottom: 0px;
+                }
+            }
+            h6 {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                color: #4030A4;
+                margin-bottom: 0;
+            }
+            span{
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: #23222B;
+                line-height: 17px;
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+    .tab_table {
+        justify-content: flex-start;
+        margin-top: 20px;
+        ul {
+            display: flex;
+            margin-bottom: 0;
+            padding-left: 0;
+            justify-content: space-between;
+            .my_product{
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #FCAF03;
+                border: 1px solid #FCAF03;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+            }
+            .my_product_list{
+                color: #FFFFFF;
+                background: #FCAF03;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+            }
+            .time_tab_class {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #4030A4;
+                border: 1px solid #4030A4;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+            }
+            .time_tab_class1{
+                color: #23CB48;
+                border: 1px solid #23CB48;
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                img{
+                    margin-right: 10px;
+                }
+            }
+            .time_tab_class2{
+                color: #FF1E1E;
+                border: 1px solid #FF1E1E;
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                img{
+                    margin-right: 10px;
+                }
+            }
+
+            .active {
+                color: #FFFFFF;
+                background: #4030A4;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+            }
+            .active1 {
+                color: #FFFFFF;
+                background: #23CB48;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                img{
+                    display: none;
+                }
+            }
+            .active2 {
+                color: #FFFFFF;
+                background: #FF1E1E;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 44px;
+                cursor: pointer;
+                margin-right: 12px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                img{
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+table{
+    .status{
+        .come{
+            img{
+                color: #23CB48;
+            }
+        }
+        .out{
+            img{
+                color: #FF1E1E;
+            }
+        }
+    }
+}

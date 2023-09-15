@@ -1,0 +1,103 @@
+.page_404 {
+    height: 100vh;
+    background: #fff;
+    position: relative;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 130px;
+        .nav__logo{
+            img{
+                width: 200px;
+            }
+        }
+        .contact {
+            display: block;
+
+            p {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #4030A4;
+                margin-bottom: -4px;
+            }
+
+            a {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                color: #4030A4;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__body {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            object-fit: contain;
+            margin: 0 auto 46px;
+        }
+
+        h5 {
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 44px;
+            line-height: 17px;
+            text-align: center;
+            color: #23222B;
+            margin-bottom: 30px;
+        }
+
+        a {
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 17px;
+            text-align: center;
+            color: #4030A4;
+            text-decoration: none !important;
+            &:hover{
+                color: #4030A4;
+            }
+        }
+    }
+
+    &__footer {
+        position: fixed;
+        bottom: 0;
+        left: 45.5%;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        height: 60px;
+
+        .foot_title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                color: #4030A4;
+            }
+        }
+    }
+}

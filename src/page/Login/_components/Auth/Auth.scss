@@ -1,0 +1,221 @@
+.login_page__form {
+    position: relative;
+    background: #ffffff;
+    border: 5px solid #e5eaf2;
+    border-radius: 20px;
+    max-width: 438px;
+    max-height: 338px;
+    padding: 28px 25px;
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+    @media (max-width: 500px) {
+        min-width: 340px;
+        width: 100%;
+    }
+    .form__title {
+        h4 {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 26px;
+            text-align: center;
+            color: #23222b;
+            margin-bottom: 26px;
+        }
+
+        div {
+            @media (max-width: 500px) {
+                display: none;
+            }
+            position: absolute;
+            font-family: "SF Pro Display";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            color: #ffffff;
+            background: #fcaf03;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            right: 22px;
+            top: 18px;
+            border-radius: 50%;
+            text-decoration: none;
+            padding-top: 3px;
+            cursor: pointer;
+        }
+    }
+
+    input {
+        position: relative;
+        border: 1px solid #c1ccdc;
+        border-radius: 10px;
+        max-width: 100%;
+        width: 255.14px;
+        height: 50px;
+        margin: 0 auto;
+        justify-content: center;
+        display: block;
+        outline: none;
+        margin-bottom: 21px;
+        padding-left: 18px;
+        color: #23222b;
+        -webkit-text-security: start;
+        background-color: #ffffff !important;
+        &::placeholder {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #c1ccdc;
+        }
+        &:focus {
+            border: 1px solid #23222b;
+        }
+        &.error {
+            color: #ff2424;
+            border: 1px solid #ff2424;
+            // &::placeholder{
+            //     color: #FF2424 ;
+            // }
+        }
+    }
+
+    .form_btn {
+        width: 100%;
+        max-width: 255.14px;
+        height: 50px;
+        margin: 0 auto;
+        justify-content: center;
+        display: block;
+        background: #c1ccdc;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #edf6fd;
+        &.active {
+            background: #4030a4;
+        }
+        &:hover {
+            background: #251584;
+            border-radius: 6px;
+        }
+    }
+
+    .form__text {
+        margin-top: 26px;
+
+        a {
+            font-family: "SF Pro Display";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            color: #23222b;
+            text-decoration: none;
+            display: block;
+        }
+    }
+    .input {
+        width: 255.14px;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        position: relative;
+        .eye_btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transform: translate(0, -50%);
+        }
+    }
+}
+
+.noty_type__error {
+    color: #fff;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background: #ff2424 !important;
+    border-radius: 10px !important;
+    padding: 0px 20px;
+    border-bottom: none;
+    width: 400px !important;
+    height: 50px !important;
+}
+.noty_theme__mint.noty_bar .noty_body {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#noty_layout__topCenter {
+    top: 7% !important;
+    left: 50%;
+    width: 400px !important;
+    height: 50px;
+    transform: translate(calc(-50% - 0.5px)) translateZ(0) scale(1, 1);
+}
+
+.item__photos {
+    margin-bottom: 0 !important;
+    margin-top: 26px;
+    img {
+        margin: 0 auto;
+        display: block;
+        object-fit: contain;
+    }
+}
+
+.item__tetxt {
+    p:first-child {
+        font-family: "SF Pro Display";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 29px;
+    }
+    p:last-child {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #fcaf03;
+        margin: 0 auto;
+        font-family: "SF Pro Display";
+    }
+}
+
+// @media (max-width : 1200px){
+//     .login_page__form{
+//         max-width: 370px;
+//         max-height: 350px;
+//         .eye_btn{
+//             right: 70px;
+//             top: 52%;
+//         }
+//     }
+// }

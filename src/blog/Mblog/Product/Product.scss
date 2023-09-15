@@ -1,0 +1,21 @@
+.table_trash{
+    cursor: pointer;
+    width: 50px;
+    img {
+        object-fit: contain;
+        color: #23222B !important;
+        width: 18px;
+    }
+}
+
+.table_info{
+    cursor: pointer;
+    padding: 0 !important;
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    img{
+        width: 20px;
+    }
+}

@@ -1,0 +1,110 @@
+.building {
+    .build_block {
+        width: 100%;
+        min-height: 200px;
+        border-radius: 20px;
+        background-color: #fff;
+        padding: 20px;
+
+        .block_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .block_img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .block_title {
+                p {
+                    color: #0D2C54;
+                    font-family: SF Pro Display;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin-bottom: 10px;
+                    span {
+                        color: #4030A4;
+                        text-align: right;
+                        font-family: SF Pro Display;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 129.336%;
+                    }
+                }
+            }
+
+        }
+
+        .btn_build {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding-top: 20px;
+
+            .delete {
+                background: #ff2424;
+                border-radius: 6px;
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: #edf6fd;
+                height: 49px;
+                width: 20%;
+                outline: none;
+                border: none;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .in {
+                background: #4030a4;
+                border-radius: 6px;
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: #edf6fd;
+                height: 49px;
+                width: 100%;
+                outline: none;
+                border: none;
+            }
+
+            .save {
+                background: #fcaf03;
+                border-radius: 6px;
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: #edf6fd;
+                height: 49px;
+                width: 20%;
+                outline: none;
+                border: none;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

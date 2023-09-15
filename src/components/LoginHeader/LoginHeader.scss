@@ -1,0 +1,91 @@
+.login_header {
+    .login_page__head {
+        position: relative;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        @media (max-width: 500px) {
+            height: 0px;
+            padding-top: 100px;
+        }
+        .head_lang {
+            a {
+                text-decoration: none;
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                color: #ffffff;
+                opacity: 0.3;
+                cursor: pointer;
+                margin-left: 32px;
+                text-align: center;
+
+                &.active {
+                    font-family: "SF Pro Display";
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #ffffff;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    color: #ffffff;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .login_page__menu {
+        position: relative;
+        display: block;
+        padding-bottom: 7%;
+        padding-top: 3%;
+
+        &__title {
+            text-align: center;
+            width: 55%;
+            margin: 0 auto;
+            img {
+                margin-bottom: 16px;
+                object-fit: contain;
+            }
+            p {
+                @media (max-width: 500px) {
+                    display: none;
+                }
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: #ffffff;
+                width: 50%;
+                text-align: center;
+                justify-content: center;
+                margin: 0 auto;
+            }
+        }
+        img {
+            width: 200px;
+        }
+    }
+}
+
+// @media (max-width : 1200px) {
+//     .login_header .login_page__menu {
+//         padding-top: 70px;
+//         padding-bottom: 5%;
+//     }
+
+//     .login_header .login_page__head {
+//         height: 50px;
+//     }
+// }

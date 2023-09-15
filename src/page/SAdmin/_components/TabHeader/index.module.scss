@@ -1,0 +1,24 @@
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: #fff;
+    padding: 10px 0;
+    .tabItem {
+        text-align: center;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 10px 0;
+        background-color: #fff;
+        color: #2563eb;
+        cursor: pointer;
+        transition: 0.7s;
+        font-size: 14px;
+        display: grid;
+        place-items: center;
+    }
+    .tabItemActive {
+        background-color: #2563eb;
+        color: #fff;
+    }
+}

@@ -1,0 +1,57 @@
+.tabElement {
+    .form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        input {
+            border-radius: 10px;
+            border: 2px solid #2564eb52;
+            padding: 7px 10px;
+            width: 100%;
+            outline: none;
+            transition: 0.5s;
+            &:focus{
+                border-color: #2563eb;
+            }
+        }
+    }
+    .products {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .card {
+            color: #fff;
+            border-radius: 10px;
+            padding: 8px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(236, 235, 235, 0.388);
+            color: #242424;
+            font-weight: 200;
+        }
+    }
+    .gif {
+        display: grid;
+        width: 100%;
+        place-items: center;
+        min-height: 200px;
+        margin-top: 20px;
+        img {
+            width: 140px;
+            height: 140px;
+        }
+        h4 {
+            font-size: 18px;
+            font-weight: 200;
+            color: #242424;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 200;
+            color: gray;
+        }
+    }
+}

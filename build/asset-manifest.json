@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b5205c8.css",
+    "main.js": "/static/js/main.cb6b47d3.js",
+    "static/js/787.8ce8b7f1.chunk.js": "/static/js/787.8ce8b7f1.chunk.js",
+    "static/media/ABEKT.svg": "/static/media/ABEKT.92c550970f4a1900523e8ecfa67671cd.svg",
+    "static/media/illustration.svg": "/static/media/illustration.cd882bed786677cf738d23f8af0b630e.svg",
+    "static/media/SFProDisplay-Bold.ttf": "/static/media/SFProDisplay-Bold.85d6f73bf73d03518461.ttf",
+    "static/media/SFProDisplay-Semibold.ttf": "/static/media/SFProDisplay-Semibold.dfc89e609e62dde18375.ttf",
+    "static/media/SFProDisplay-Medium.ttf": "/static/media/SFProDisplay-Medium.7fe92bb1fe75c84e473a.ttf",
+    "static/media/SFProDisplay-Regular.ttf": "/static/media/SFProDisplay-Regular.6b109fecbc7563467e36.ttf",
+    "service-worker.js": "/service-worker.js",
+    "static/media/perspective_matte 1.png": "/static/media/perspective_matte 1.e2af59c240bd763dc90a.png",
+    "static/media/box.gif": "/static/media/box.df512c46f5a91800c812.gif",
+    "static/media/Graduation cap and diploma with seal 3D icon 1.png": "/static/media/Graduation cap and diploma with seal 3D icon 1.2f71b0c30f01f0d0e8c7.png",
+    "static/media/perspective_matte 2 1.png": "/static/media/perspective_matte 2 1.75c27e8cd0d120d64f2c.png",
+    "static/media/decor.png": "/static/media/decor.7b79682d99cf8749db0f.png",
+    "static/media/404page.svg": "/static/media/404page.9f4b62186ef1aecc811943a2380e5fdb.svg",
+    "static/media/Vector.svg": "/static/media/Vector.49498ba4369da2d7d3ad3347dee055cc.svg",
+    "static/media/eye-slash.svg": "/static/media/eye-slash.9f94aa3409532f6c5d558242e938e311.svg",
+    "static/media/Group 1.svg": "/static/media/Group 1.85fb31f76e64969c92fd1078cb209b59.svg",
+    "static/media/lock.svg": "/static/media/lock.45f09c3eeecc9ed6f9861d3eb36de944.svg",
+    "static/media/edit.svg": "/static/media/edit.6b72c8f51b52d48875ce7010e6c6666c.svg",
+    "static/media/eye.svg": "/static/media/eye.1af91bb09a7f4539f5cc95c62d64bea9.svg",
+    "static/media/arr-01.svg": "/static/media/arr-01.8b2d23ae4e3f1d47b15d.svg",
+    "index.html": "/index.html",
+    "static/media/Group 43.svg": "/static/media/Group 43.87876f0a8c3b3ddb87714408d7bfdc87.svg",
+    "static/media/info_pro.svg": "/static/media/info_pro.4fd2978296af75a5370b2d3479b860a9.svg",
+    "static/media/closeModal.svg": "/static/media/closeModal.db5214498316c4ca3866296096dbcecf.svg",
+    "static/media/Group 41.svg": "/static/media/Group 41.5b699181cbc53cb602bc0895592be2b7.svg",
+    "static/media/arrow-down-right-square-fill.svg": "/static/media/arrow-down-right-square-fill.d593c3daadfc97241e1fd5bfe2f090fc.svg",
+    "static/media/arrow-up-right-square-fill.svg": "/static/media/arrow-up-right-square-fill.a1c4184cd0e0733d5894cf75378a0379.svg",
+    "static/media/add.svg": "/static/media/add.abda51135f2a0430fc6ba3561914d87e.svg",
+    "static/media/VectorUp.svg": "/static/media/VectorUp.3a50b61880def6615d377d3613794669.svg",
+    "main.2b5205c8.css.map": "/static/css/main.2b5205c8.css.map",
+    "main.cb6b47d3.js.map": "/static/js/main.cb6b47d3.js.map",
+    "787.8ce8b7f1.chunk.js.map": "/static/js/787.8ce8b7f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b5205c8.css",
+    "static/js/main.cb6b47d3.js"
+  ]
+}
