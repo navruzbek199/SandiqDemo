@@ -5,6 +5,7 @@ import 'firebase/compat/firestore'
 import { IoIosNotifications } from 'react-icons/io'
 import './Notification.scss'
 import { Link } from 'react-router-dom';
+import Gif from '../../assets/image/box.gif'
 const Notification = () => {
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
@@ -24,13 +25,23 @@ const Notification = () => {
     )
     const token = localStorage.getItem('access_token')
     const readingSms = localStorage.getItem('lastSms')
-    const filterData = messages?.filter((item) => item?.role_to === "admin").filter((item) => !readingSms?.includes(item.uid))
+    const filterData = messages?.filter((item) => item?.role_to === "admin").filter((item) => item?.status === true)
+    const onUpdate = (uid) => {
+        firestore.collection("messages").where("uid", "==", uid)
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                doc.ref.update({status: false})
+            });
+       })
+      };
     useEffect(() => {
         if(filterData?.length > 0){
             setActive(false)
         }else{
             setActive(true)
         }
+        
     }, [messages, window.location])
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -44,19 +55,9 @@ const Notification = () => {
         }
     }, [open])
     const handleClick = () => {
-        if(filterData.length > 0) {
-            setOpen(prev => !prev)
-        }
+        setOpen(prev => !prev)
     }
-    // const newSms = async () => {
-    //     firestore.collection("messages").add({
-    //         uid: Date.now(),
-    //         displayName: "Admin",
-    //         text: newMessage,
-    //         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    //     });
-    //     setNewMessage("");
-    // }
+    
     const time  = (str) => {
         const newTime = new Date(str)
         return newTime.toLocaleTimeString()
@@ -74,15 +75,24 @@ const Notification = () => {
                 open ?
                     <div className='account_drop'>
                         <div className="drop_user">
-                            {filterData?.map((item) => (
+                            {filterData?.length > 0 ? filterData?.map((item) => (
                                 <Link to={`noty/${item?.bid_id}/?${item?.uid}`} onClick={() => {
                                     setOpen(false) 
+                                    onUpdate(item?.uid)
+                                    // onUpdate(() => item?.uid)
                                     // NotificationId(item?.bid_id)
                                     }}>
                                     <p>{item?.object_name}</p>
                                     <span>{time(item?.createdAt)}</span>
                                 </Link>
-                            ))}
+                            )) : 
+                            <div className='gif'>
+                                <img src={Gif} alt="gif" />
+                            </div>
+                            }
+                            <Link to={`notyhistory`} className='link_history'>
+                                Список запросов
+                            </Link>
                         </div>
                     </div>
                     : null

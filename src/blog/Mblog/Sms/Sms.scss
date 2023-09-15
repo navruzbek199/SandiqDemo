@@ -22,7 +22,7 @@
                 position: relative;
                 text-decoration: none;
                 display: flex;
-                align-items: flex-end;
+                align-items: flex-start;
 
                 img {
                     object-fit: contain;
@@ -36,6 +36,15 @@
                     font-weight: 600;
                     font-size: 28px;
                     line-height: 32px;
+                    color: #4030A4;
+                    margin-bottom: 12px;
+                }
+                h2{
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 27px;
                     color: #4030A4;
                     margin-bottom: 0px;
                 }
@@ -82,10 +91,11 @@
         position: relative;
         padding: 20px 0;
         min-height: 20vh;
-        display: grid;
+        display: block;
         border-radius: 20px;
         margin-top: 16px;
         padding: 20px;
+
         .des_head {
             width: 100%;
             height: 50px;
@@ -94,7 +104,8 @@
             display: flex;
             align-items: center;
             background: #F3F6FA;
-            h6{
+
+            h6 {
                 font-family: "SF Pro Display";
                 font-style: normal;
                 font-weight: 500;
@@ -102,6 +113,69 @@
                 line-height: 17px;
                 color: #A0ABBE;
                 margin-bottom: 0 !important;
+            }
+        }
+
+        .des_body {
+            margin-top: 12px;
+
+            p {
+                font-family: "SF Pro Display";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    .send_btn {
+        display: flex;
+        align-items: flex-end;
+        justify-content: right;
+        height: 100%;
+        .send {
+            background: #FCAF03;
+            border-radius: 6px;
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #EDF6FD;
+            height: 49px;
+            width: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                background: #E49E00;
+            }
+        }
+        .cancel{
+            background: #A0ABBE;
+            border-radius: 6px;
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #EDF6FD;
+            height: 49px;
+            width: 256px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                background: #A0ABBE;
             }
         }
     }
