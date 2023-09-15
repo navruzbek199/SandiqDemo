@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b5205c8.css",
-    "main.js": "/static/js/main.cb6b47d3.js",
+    "main.css": "/static/css/main.03bbdaca.css",
+    "main.js": "/static/js/main.ddec8c22.js",
     "static/js/787.8ce8b7f1.chunk.js": "/static/js/787.8ce8b7f1.chunk.js",
     "static/media/ABEKT.svg": "/static/media/ABEKT.92c550970f4a1900523e8ecfa67671cd.svg",
     "static/media/illustration.svg": "/static/media/illustration.cd882bed786677cf738d23f8af0b630e.svg",
@@ -32,12 +32,12 @@
     "static/media/arrow-up-right-square-fill.svg": "/static/media/arrow-up-right-square-fill.a1c4184cd0e0733d5894cf75378a0379.svg",
     "static/media/add.svg": "/static/media/add.abda51135f2a0430fc6ba3561914d87e.svg",
     "static/media/VectorUp.svg": "/static/media/VectorUp.3a50b61880def6615d377d3613794669.svg",
-    "main.2b5205c8.css.map": "/static/css/main.2b5205c8.css.map",
-    "main.cb6b47d3.js.map": "/static/js/main.cb6b47d3.js.map",
+    "main.03bbdaca.css.map": "/static/css/main.03bbdaca.css.map",
+    "main.ddec8c22.js.map": "/static/js/main.ddec8c22.js.map",
     "787.8ce8b7f1.chunk.js.map": "/static/js/787.8ce8b7f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b5205c8.css",
-    "static/js/main.cb6b47d3.js"
+    "static/css/main.03bbdaca.css",
+    "static/js/main.ddec8c22.js"
   ]
 }
