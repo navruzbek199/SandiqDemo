@@ -180,3 +180,40 @@
         }
     }
 }
+
+
+table{
+    .table__body{
+        .shed_item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 200px;
+            height: 40px;
+            background-color: #4030A4;
+            padding: 10px;
+            color: #fff;
+            border-radius: 10px;
+            span{
+                padding: 5px;
+                color: #fff;
+            }
+            .amount{
+                width: 100px;
+                background-color: #0D2C54;
+                outline: none !important;
+    
+            }
+        }
+        .price_shed{
+            .amount{
+                border-radius: 10px;
+                height: 30px;
+                border: 1px solid #4030A4;
+                outline: none !important;
+                padding: 0 10px;
+            }
+        }
+    }
+}

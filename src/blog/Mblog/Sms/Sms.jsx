@@ -4,6 +4,7 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import apiRoot from '../../../store/apiRoot'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArrowLeft from '../../../assets/image/svg/arrow-left.png'
+import SmsItem from './_components/SmsItem'
 const Sms = () => {
     const { id } = useParams()
     const { search } = useLocation()
@@ -17,6 +18,7 @@ const Sms = () => {
             }
         }).then((res) => {
             setSms(res?.data)
+            console.log(res?.data, "sms nima");
         })
         apiRoot.get(`bid/comparison/${id}`, {
             headers: {
@@ -27,12 +29,26 @@ const Sms = () => {
             setComparison(res?.data)
         })
     }, [id, search])
-    const time  = (str) => {
+    const time = (str) => {
         const newTime = new Date(str)
         return newTime.toLocaleTimeString() + " " + newTime.toLocaleDateString()
     }
     console.log(comparison, "comparison");
 
+    const onSend = () => {
+        const data = {
+            object_id: sms?.id,
+            bid_id: id,
+            products: [
+                {
+                    product_id: "",
+                    sklad_id: '',
+                    amount: ''
+                }
+            ]
+        }
+    }
+    
     // const newSms = async () => {
     //     firestore.collection("messages").add({
     //         uid: Date.now(),
@@ -58,7 +74,7 @@ const Sms = () => {
                                 <div className="title">
                                     <h4>Заявка</h4>
                                     <h2>
-                                    {time(sms?.created_at)}
+                                        {time(sms?.created_at)}
                                     </h2>
                                 </div>
                             </Link>
@@ -85,26 +101,12 @@ const Sms = () => {
                                         <th col-md-2>Имя</th>
                                         <th col-md-2>Телефон</th> */}
                                         <th col-md-2>Имя cклада</th>
+                                        <th col-md-2>Junatiladigan Mahsulot soni</th>
                                     </tr>
                                 </thead>
                                 <tbody className='table__body'>
-                                    {sms?.products?.map((item, index) => (
-                                        <tr key={item?.id}>
-                                            <td col-md-1>{index + 1}</td>
-                                            <td col-md-2>{item?.name}</td>
-                                            <td col-md-2>{item?.amount} {item?.size}</td>
-                                            {/* <td col-md-1>{sms?.object}</td>
-                                            <td col-md-1>{sms?.worker}</td>
-                                            <td col-md-1>+{sms?.phone}</td> */}
-                                                <td col-md-2>
-                                                    {comparison?.filter((elem) => elem?.id === item?.id)?.map((item) => (
-                                                        <div className='table_list_phone mt-1'>
-                                                            {item?.warehouse?.name} 
-                                                        </div>
-                                                    ))
-                                                    }
-                                                </td>
-                                        </tr>
+                                    {sms?.products?.map((item,index) => (
+                                    <SmsItem item={item} index={index} comparison={comparison}/>
                                     ))
                                     }
                                 </tbody>
