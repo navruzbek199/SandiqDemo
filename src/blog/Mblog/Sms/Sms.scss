@@ -215,5 +215,40 @@ table{
                 padding: 0 10px;
             }
         }
+        td{
+
+            .new{
+               background-color: #5C60F8;
+               height: 30px;
+               border-radius: 10px;
+               text-transform: capitalize;
+               font-size: 12px;
+               font-weight: 400;
+               color: #fff;
+               padding: 12px;
+               width: 100%;
+            }
+            .success{
+                background-color: #00BE37;
+                height: 30px;
+                border-radius: 10px;
+                text-transform: capitalize;
+               font-size: 12px;
+               font-weight: 400;
+               color: #fff;
+               padding: 12px;
+               width: 100%;
+            }
+            .cancel{
+                background-color: #FF4960;
+                border-radius: 10px;
+                text-transform: capitalize;
+               font-size: 12px;
+               font-weight: 400;
+               color: #fff;
+               padding: 12px;
+               width: 100%;
+            }
+        }
     }
 }

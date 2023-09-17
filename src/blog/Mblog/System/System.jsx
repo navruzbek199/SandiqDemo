@@ -7,10 +7,12 @@ import { Bar, Pie } from 'react-chartjs-2';
 import LineChart, { data } from '../../../components/LineChart/LineChart';
 import { FaWarehouse } from "react-icons/fa";
 import { AiOutlineShopping } from 'react-icons/ai'
-import { BsBoxArrowDownLeft, BsBoxArrowUpLeft } from 'react-icons/bs'
+import { BsBoxArrowDownLeft, BsBoxArrowUpLeft, BsBuildings } from 'react-icons/bs'
 import VerticalChart, { BarData, options } from '../../../components/VerticalChart/VerticalChart';
 import Income from '../../../assets/image/svg/arrow-down-right-square-fill.svg'
 import Outgo from '../../../assets/image/svg/arrow-up-right-square-fill.svg'
+import ChevronDown from '../../../assets/image/chevron-down.svg'
+import Filter from '../../../assets/image/filter-outline.svg'
 const System = () => {
 
   const token = localStorage.getItem('access_token')
@@ -272,60 +274,8 @@ const System = () => {
 
   console.log(monitoring, "monit");
   return (
-    <div className='system mt-4'>
+    <div className='system'>
       <Container fluid="md">
-        <Row>
-          <Col md="2">
-            <div className="system_card_shed">
-              <div className="title">
-                <p>Склады</p>
-                <span>
-                  {allShed?.length}
-                </span>
-              </div>
-              <div className="photo">
-                <FaWarehouse size={42} color='#fff' />
-              </div>
-            </div>
-          </Col>
-          <Col md="2">
-            <div className="system_card_pro">
-              <div className='title'>
-                <p>Продукты</p>
-                <span>{products?.length}+ </span>
-              </div>
-              <div className="photo">
-                <AiOutlineShopping size={42} color='#fff' />
-              </div>
-            </div>
-          </Col>
-          <Col md="4">
-            <div className="system_card_k">
-              <div className='title'>
-                <p>Входящие</p>
-                <span>
-                  {monitoring?.kelgan_summa?.toLocaleString()} сум
-                </span>
-              </div>
-              <div className="photo">
-                <BsBoxArrowDownLeft size={36} color='#fff' />
-              </div>
-            </div>
-          </Col>
-          <Col md="4">
-            <div className="system_card_s">
-              <div className="title">
-                <p>Выходящие</p>
-                <span>
-                  {monitoring?.ketgan_summa?.toLocaleString()} сум
-                </span>
-              </div>
-              <div className="photo">
-                <BsBoxArrowUpLeft size={36} color='#fff' />
-              </div>
-            </div>
-          </Col>
-        </Row>
         <Row>
           <form onSubmit={(e) => onSubmit(e)} >
             <div className="form_group_select mt-4">
@@ -343,7 +293,7 @@ const System = () => {
                       search
                       placeholder="Выберите день"
                     />
-
+                    <img src={ChevronDown} alt="" />
                   </div>
                   <div className="form_control">
                     <label>
@@ -356,6 +306,7 @@ const System = () => {
                       search
                       placeholder="Выберите склад"
                     />
+                    <img src={ChevronDown} alt="" />
                   </div>
                   <div className="form_control">
                     <label>
@@ -368,6 +319,7 @@ const System = () => {
                       search
                       placeholder="Выберите продукт"
                     />
+                    <img src={ChevronDown} alt="" />
                   </div>
                   <div className="form_control">
                     <label>
@@ -380,16 +332,80 @@ const System = () => {
                       search
                       placeholder="Действия"
                     />
+                    <img src={ChevronDown} alt="" />
                   </div>
                 </div>
               </Col>
               <Col md={{ span: 2, offset: 1 }}>
                 <div className='all_btn'>
-                  <button className="save">Фильтровать</button>
+                  <button className="save">Фильтр <img src={Filter} alt="filter_icon" /></button>
                 </div>
               </Col>
             </div>
           </form>
+        </Row>
+        <Row className='mb-5'>
+          <Col md="2">
+            <div className="system_card_shed">
+              <div className="title">
+                <p>Склады</p>
+                <span>
+                  {allShed?.length}
+                </span>
+              </div>
+              <div className="photo">
+                <FaWarehouse size={42} color='#fff' />
+              </div>
+            </div>
+          </Col>
+          <Col md="2">
+            <div className="system_card_obj">
+              <div className='title'>
+                <p>Обьекты</p>
+                <span>{products?.length}+ </span>
+              </div>
+              <div className="photo">
+                <BsBuildings size={42} color='#fff' />
+              </div>
+            </div>
+          </Col>
+          <Col md="2">
+            <div className="system_card_pro">
+              <div className='title'>
+                <p>Продукты</p>
+                <span>{products?.length}+ </span>
+              </div>
+              <div className="photo">
+                <AiOutlineShopping size={42} color='#fff' />
+              </div>
+            </div>
+          </Col>
+          <Col md="3">
+            <div className="system_card_k">
+              <div className='title'>
+                <p>Входящие</p>
+                <span>
+                  {monitoring?.kelgan_summa?.toLocaleString()} сум
+                </span>
+              </div>
+              <div className="photo">
+                <BsBoxArrowDownLeft size={36} color='#fff' />
+              </div>
+            </div>
+          </Col>
+          <Col md="3">
+            <div className="system_card_s">
+              <div className="title">
+                <p>Выходящие</p>
+                <span>
+                  {monitoring?.ketgan_summa?.toLocaleString()} сум
+                </span>
+              </div>
+              <div className="photo">
+                <BsBoxArrowUpLeft size={36} color='#fff' />
+              </div>
+            </div>
+          </Col>
         </Row>
         <div className="chart_menu">
           <Row>

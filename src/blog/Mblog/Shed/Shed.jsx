@@ -172,7 +172,7 @@ const Shed = () => {
               <Accordion.Item eventKey={item?.id}>
                 <Accordion.Header>
                   <div className="title">
-                    <h4>{index + 1}-cклад</h4>
+                    <h4>{item?.name}</h4>
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
@@ -264,8 +264,7 @@ const Shed = () => {
             </div>
           </form>
         </div>
-      </Modal>
-      }
+      </Modal>}
       {dalete && <Modal set={setDalete} height={350} maxWidth={530} cancel={false}>
         <div className="delete_teacher">
           <div className="delete_title">

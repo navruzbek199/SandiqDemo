@@ -16,10 +16,10 @@ const Notification = () => {
         appId: "1:626928554871:web:0de76fb140d232bd278772",
         measurementId: "G-Y0RY9TZVLZ"
     });
-    const firestore = firebase.firestore()
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState(true)
     const ref = useRef()
+    const firestore = firebase.firestore()
     const [messages, loading] = useCollectionData(
         firestore.collection("messages").orderBy("createdAt")
     )
@@ -90,7 +90,7 @@ const Notification = () => {
                                 <img src={Gif} alt="gif" />
                             </div>
                             }
-                            <Link to={`notyhistory`} className='link_history'>
+                            <Link to={`notyhistory`} className='link_history' onClick={()=> setOpen(false)}>
                                 Список запросов
                             </Link>
                         </div>

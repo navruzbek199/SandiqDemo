@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../node_modules/noty/lib/noty.css";  
 import "../node_modules/noty/lib/themes/mint.css";
 import 'react-select-search/style.css'
+import Contex from './store/Contex';
 
 
 const loadingMarkup = (
@@ -21,11 +22,11 @@ const loadingMarkup = (
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Suspense fallback={loadingMarkup}>
-    <React.StrictMode>
       <BrowserRouter>
+      <Contex>
         <App />
+      </Contex>
       </BrowserRouter>
-    </React.StrictMode>
   </Suspense>
 );
 serviceWorkerRegistration.unregister();

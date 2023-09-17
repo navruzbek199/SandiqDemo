@@ -15,6 +15,7 @@ import Profile from "../page/SAdmin/Profile/Profile";
 import ProductItem from "../blog/Mblog/Product/_component/ProductItem/ProductItem";
 import Objects from "../blog/Mblog/Building/_components/Objects/Objects";
 import Sms from "../blog/Mblog/Sms/Sms";
+import SmsHistory from "../blog/Mblog/Sms/_components/SmsHistory";
 const RouterPage = () => {
   const token = localStorage.getItem("access_token");
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const RouterPage = () => {
           <Route path="/home/product/:id" element={<ProductItem />} />
           <Route path="/home/objects/:id" element={<Objects />} />
           <Route path="/home/noty/:id" element={<Sms />} />
+          <Route path="/home/notyhistory" element={<SmsHistory />} />
         </Route>
         <Route path="/dashboard" element={<Sadmin />}>
           <Route index element={<Dashboard />} />

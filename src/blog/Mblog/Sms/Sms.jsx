@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Sms.scss'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import apiRoot from '../../../store/apiRoot'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArrowLeft from '../../../assets/image/svg/arrow-left.png'
 import SmsItem from './_components/SmsItem'
+import { GlobalContex } from '../../../store/Contex'
 const Sms = () => {
     const { id } = useParams()
     const { search } = useLocation()
@@ -25,7 +26,7 @@ const Sms = () => {
                 Authorization: `Bearer ${token}`
             }
         }).then((res) => {
-            console.log(res?.data);
+            console.log(res?.data, "cam");
             setComparison(res?.data)
         })
     }, [id, search])
@@ -33,22 +34,17 @@ const Sms = () => {
         const newTime = new Date(str)
         return newTime.toLocaleTimeString() + " " + newTime.toLocaleDateString()
     }
-    console.log(comparison, "comparison");
 
+    const { data } = useContext(GlobalContex)
     const onSend = () => {
-        const data = {
-            object_id: sms?.id,
-            bid_id: id,
-            products: [
-                {
-                    product_id: "",
-                    sklad_id: '',
-                    amount: ''
-                }
-            ]
+        const newdata = {
+            object_id: sms?.object_id,
+            bid_id: Number(id),
+            products: data,
         }
+        console.log(newdata, "test data");
     }
-    
+
     // const newSms = async () => {
     //     firestore.collection("messages").add({
     //         uid: Date.now(),
@@ -105,8 +101,8 @@ const Sms = () => {
                                     </tr>
                                 </thead>
                                 <tbody className='table__body'>
-                                    {sms?.products?.map((item,index) => (
-                                    <SmsItem item={item} index={index} comparison={comparison}/>
+                                    {sms?.products?.map((item, index) => (
+                                        <SmsItem item={item} index={index} comparison={comparison} />
                                     ))
                                     }
                                 </tbody>
@@ -125,7 +121,7 @@ const Sms = () => {
                     </Col>
                     <Col md={{ span: 5, offset: 1 }}>
                         <div className="send_btn gap-4">
-                            <button className='send'>Подтвердить</button>
+                            <button className='send' onClick={onSend}>Подтвердить</button>
                             <button className='cancel'>Oтменить заявка</button>
                         </div>
                     </Col>

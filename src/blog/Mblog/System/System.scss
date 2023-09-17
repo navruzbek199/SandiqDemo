@@ -10,11 +10,12 @@
                 align-items: center;
                 justify-content: space-between;
                 gap: 10px;
+                
             }
 
             .form_control {
                 width: 100%;
-
+                position: relative;
                 label {
                     padding-left: 0;
                     margin-bottom: 0;
@@ -30,17 +31,24 @@
                 }
 
                 .select-search-container {
+                    position: relative;
                     width: 100% !important;
+                }
+                img{
+                    position: absolute;
+                    right: 10px;
+                    top: 40px;
                 }
             }
 
             .all_btn {
                 display: flex;
                 align-items: end;
-                gap: 12px;
-
+                justify-content: end;
+                gap: 24px;
+                
                 .save {
-                    background: #4030A4;
+                    background: #5C60F8;
                     border-radius: 6px;
                     font-family: 'SF Pro Display';
                     font-style: normal;
@@ -53,6 +61,12 @@
                     width: 100%;
                     outline: none;
                     border: none;
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        margin-left: 10px;
+                    }
                 }
 
                 .clear {
@@ -85,7 +99,7 @@
         display: flex;
         place-items: center;
         justify-content: space-around;
-        background: #9ab6f7c6;
+        background: #C593F5;
         p {
             font-size: 19px;
             font-style: normal;
@@ -127,6 +141,30 @@
             color: #fff;
         }
     }
+    .system_card_obj{
+        width: 100%;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        place-items: center;
+        background: #FF7A50;
+        justify-content: space-around;
+        p {
+            font-size: 19px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: .4px;
+            line-height: 24px;
+            color: #fff;
+            margin-bottom: 0;
+        }
+        span{
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
 
     .system_card_s {
         width: 100%;
@@ -134,7 +172,7 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #FF2424;
+        background: #FF4960;
         justify-content: space-around;
         p {
             font-size: 19px;
@@ -159,7 +197,7 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #008700;
+        background: #00BE37;
         justify-content: space-around;
         p {
             font-size: 19px;
