@@ -27,6 +27,8 @@
         left: 0;
         z-index: 99;
         .drop_user {
+            height: 130px;
+            overflow-y: scroll;
             .gif{
                 padding-bottom: 10px;
                 img{

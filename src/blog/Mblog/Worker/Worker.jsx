@@ -40,7 +40,6 @@ const Worker = () => {
                 Authorization: `Bearer ${token}`
             }
         }).then((res) => {
-            console.log(res?.data);
             setOpen(false);
             apiRoot.get(`workers/list`, {
                 headers: {

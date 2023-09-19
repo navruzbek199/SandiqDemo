@@ -81,7 +81,6 @@ const System = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data);
       setAllShed(res.data)
       const dates = res?.data?.map((item) => {
         return {
@@ -103,7 +102,6 @@ const System = () => {
       }
     }).then((res) => {
       setProducts(res?.data)
-      console.log(res?.data);
       const dates = res?.data?.map((item) => {
         return {
           name: item?.name,
@@ -150,20 +148,17 @@ const System = () => {
       }
     }).then((res) => {
       setLinechart(res?.data)
-      console.log(res?.data, "linechart");
     })
     apiRoot.post(`products/monitoring`, data, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data, "all data");
       setMonitoring(res?.data)
       setLengthData(res.data?.products?.length)
 
       const allID = res.data?.products?.map((item) => item.warehouse.id)
       const sortData = Array.from(new Set(allID))
-      console.log(sortData, "bu sort");
       const map1 = new Map();
 
       for (let i = 0; i < sortData.length; i++) {
@@ -227,7 +222,6 @@ const System = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data, "data chart");
       setCharts(res.data)
     })
     apiRoot.post(`products/monitoring/linechart`, data, {
@@ -236,14 +230,12 @@ const System = () => {
       }
     }).then((res) => {
       setLinechart(res?.data)
-      console.log(res?.data, "linechart");
     })
     apiRoot.post(`products/monitoring`, data, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data, "all data");
       setMonitoring(res?.data)
       setLengthData(res.data?.products?.length)
 
@@ -272,7 +264,6 @@ const System = () => {
 
 
 
-  console.log(monitoring, "monit");
   return (
     <div className='system'>
       <Container fluid="md">

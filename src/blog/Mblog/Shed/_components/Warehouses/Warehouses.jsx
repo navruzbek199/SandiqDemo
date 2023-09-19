@@ -25,7 +25,6 @@ const Warehouses = () => {
                 Authorization: `Bearer ${token}`
             }
         }).then((res) => {
-            console.log(res?.data);
             setGetId(res?.data)
         })
     }
@@ -60,13 +59,6 @@ const Warehouses = () => {
             }
         }
     }
-
-    // {item?.date.slice(0, 10)} {item?.date?.slice(11, 16)}
-    // const FilterProduct = () => {
-    //  const data = filterData?.sort((a,b) => a.name.localeCompare(b.name))
-    //  setFilterData(data)
-    // }
-
     return (
         <>
             <div className="warehouses">

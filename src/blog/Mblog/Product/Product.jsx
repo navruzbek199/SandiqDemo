@@ -72,7 +72,6 @@ const Product = () => {
         })
         setOptions(g)
     }, [getUnit])
-    console.log(size, "nima");
     const onSubmit = (e) => {
         e.preventDefault()
         const data = {
@@ -93,7 +92,6 @@ const Product = () => {
                     Authorization: `Bearer ${token}`
                 }
             }).then((res) => {
-                console.log(res.data);
                 setProduct(res?.data)
             })
         })
@@ -118,7 +116,6 @@ const Product = () => {
                     Authorization: `Bearer ${token}`
                 }
             }).then((res) => {
-                console.log(res.data);
                 setProduct(res?.data)
             })
         })
@@ -136,7 +133,6 @@ const Product = () => {
                     Authorization: `Bearer ${token}`
                 }
             }).then((res) => {
-                console.log(res.data);
                 setProduct(res?.data)
             })
         })

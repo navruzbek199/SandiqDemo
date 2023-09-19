@@ -33,7 +33,6 @@ const Shed = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data);
       setGetShed(res?.data)
     }).catch((err) => {
       console.log(err);
@@ -70,7 +69,6 @@ const Shed = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res)=>{
-      console.log(res?.data, "id get");
       setChangeName(res?.data?.name)
       setChangeAddress(res?.data?.address)
       setChangeValue(res?.data?.worker?.name)
@@ -88,7 +86,6 @@ const Shed = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
-      console.log(res?.data);
       setOpen(false)
       apiRoot.get(`warehouses/list`, {
         headers: {
@@ -109,7 +106,6 @@ const Shed = () => {
         }
       },
     ).then(res => {
-      console.log(res?.data, "bu delete")
         setDalete(false)
         apiRoot.get(`warehouses/list`, {
           headers: {

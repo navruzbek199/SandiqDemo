@@ -56,4 +56,50 @@
             }
         }
     }
+    .tab_table{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 0;
+        }
+        .time_tab_class1 {
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #4030A4;
+            border: 1px solid #4030A4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+        .active1{
+            font-family: 'SF Pro Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #FFFFFF;
+            border: 1px solid #4030A4;
+            background-color: #4030A4;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+    }
 }

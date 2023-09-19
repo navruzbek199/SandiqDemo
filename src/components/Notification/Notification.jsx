@@ -6,6 +6,7 @@ import { IoIosNotifications } from 'react-icons/io'
 import './Notification.scss'
 import { Link } from 'react-router-dom';
 import Gif from '../../assets/image/box.gif'
+import Noty from 'noty'
 const Notification = () => {
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
@@ -38,6 +39,16 @@ const Notification = () => {
     useEffect(() => {
         if(filterData?.length > 0){
             setActive(false)
+            if(filterData?.status){
+                setTimeout(function () {
+                    new Noty({
+                      text: "Новое сообщение",
+                      layout: "topRight",
+                      type: "success",
+                      timeout: 2000,
+                    }).show();
+                  }, 1000);
+            }
         }else{
             setActive(true)
         }
@@ -63,7 +74,6 @@ const Notification = () => {
         return newTime.toLocaleTimeString()
     }
     
-    console.log(filterData,"oqilmagan smslar");
     return (
         <div className='notification'>
             <div className='notification_icon' onClick={handleClick}>

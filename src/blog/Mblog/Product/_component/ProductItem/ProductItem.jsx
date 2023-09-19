@@ -14,7 +14,6 @@ const ProductItem = () => {
                 Authorization: `Bearer ${token}`
             }
         }).then((res) => {
-            console.log(res?.data);
             setGetId(res?.data)
         })
     }

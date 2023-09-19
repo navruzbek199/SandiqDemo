@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import ArrowLeft from '../../../../assets/image/svg/arrow-left.png'
@@ -8,7 +8,9 @@ import Info from '../../../../assets/image/svg/info_pro.svg'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore'
+import { GlobalContex } from '../../../../store/Contex'
 const SmsHistory = () => {
+    const { data } = useContext(GlobalContex)
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
         authDomain: "e-work-9007c.firebaseapp.com",
@@ -32,13 +34,14 @@ const SmsHistory = () => {
             }
         }).then((res) => {
             setHistory(res?.data)
-            console.log(res?.data);
+            console.log(res?.data, "sms his");
         }).catch((err) => {
             console.log(err);
         })
     }
     useEffect(() => {
         GetHistoryNoty()
+        data.splice(0,data.length)
     }, [])
     const time = (str) => {
         const newTime = new Date(str)
@@ -78,21 +81,17 @@ const SmsHistory = () => {
                                     <th col-md-2>Имя</th>
                                     <th col-md-2>Телефон</th>
                                     <th col-md-2>Статус</th>
-                                    <th col-md-1></th>
                                 </tr>
                             </thead>
                             <tbody className='table__body'>
-                                {history?.map((item, index) => (
+                                {history?.sort((a, b) => a?.created_at?.localeCompare(b?.created_at)).reverse()?.map((item, index) => (
                                     <tr key={item?.id}>
                                         <td col-md-1>{index + 1}</td>
                                         <td col-md-2>{item?.object?.name}</td>
                                         <td col-md-2>{time(item?.created_at)}</td>
                                         <td col-md-2>{item?.object?.worker}</td>
                                         <td col-md-2>{item?.object?.phone}</td>
-                                        <td col-md-2>{item?.status === "yuborilgan" ? <span onClick={() => filterId(item.id)} className='new'>new sms</span> : item?.status === "qaytarildi" ? <span className='cancel'>cancel</span> : item?.status === "tasdiqlandi" ? <span className='succes'>succes</span> : null}</td>
-                                        <td col-md-1 className='table_info' onClick={() => navigate(`noty/${item?.id}`)}>
-                                            <img src={Info} alt="editImage" />
-                                        </td>
+                                        <td col-md-2 style={{cursor: "pointer"}} onClick={() => navigate(`/home/noty/${item?.id}`)}>{item?.status === "yuborilgan" ? <span onClick={() => filterId(item.id)} className='new'>new sms</span> : item?.status === "qaytarildi" ? <span className='cancel'>cancel</span> : item?.status === "tasdiqlandi" ? <span className='succes'>success</span> : null}</td>
                                     </tr>
                                 ))}
                             </tbody>
