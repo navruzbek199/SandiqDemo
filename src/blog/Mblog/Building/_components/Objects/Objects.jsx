@@ -91,7 +91,7 @@ const Objects = () => {
                 <div className="tab_content">
                     {
                         tab === 1 ?   
-                            <div className="teacher_page mt-4">
+                            <div className="teacher_page mt-2">
                                 <table responsive variant='#F3F6FA'>
                                     <thead className='table__head'>
                                         <tr>
