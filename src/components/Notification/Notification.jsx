@@ -7,6 +7,7 @@ import './Notification.scss'
 import { Link } from 'react-router-dom';
 import Gif from '../../assets/image/box.gif'
 import Noty from 'noty'
+import SmsRingtone from '../../assets/song/ringtone.mp3'
 const Notification = () => {
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
@@ -24,6 +25,7 @@ const Notification = () => {
     const [messages, loading] = useCollectionData(
         firestore.collection("messages").orderBy("createdAt")
     )
+    const ringtone = new Audio(SmsRingtone)
     const token = localStorage.getItem('access_token')
     const readingSms = localStorage.getItem('lastSms')
     const filterData = messages?.filter((item) => item?.role_to === "admin").filter((item) => item?.status === true)
@@ -38,6 +40,7 @@ const Notification = () => {
       };
     useEffect(() => {
         if(filterData?.length > 0){
+            ringtone.play()
             setActive(false)
             if(filterData?.status){
                 setTimeout(function () {

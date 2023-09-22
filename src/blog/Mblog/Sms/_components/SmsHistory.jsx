@@ -90,7 +90,7 @@ const SmsHistory = () => {
                                         <td col-md-2>{item?.object?.name}</td>
                                         <td col-md-2>{time(item?.created_at)}</td>
                                         <td col-md-2>{item?.object?.worker}</td>
-                                        <td col-md-2>{item?.object?.phone}</td>
+                                        <td col-md-2>+{item?.object?.phone}</td>
                                         <td col-md-2 style={{cursor: "pointer"}} onClick={() => navigate(`/home/noty/${item?.id}`)}>{item?.status === "yuborilgan" ? <span onClick={() => filterId(item.id)} className='new'>new sms</span> : item?.status === "qaytarildi" ? <span className='cancel'>cancel</span> : item?.status === "tasdiqlandi" ? <span className='succes'>success</span> : null}</td>
                                     </tr>
                                 ))}

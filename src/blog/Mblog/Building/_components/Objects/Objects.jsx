@@ -90,7 +90,7 @@ const Objects = () => {
                 </Row>
                 <div className="tab_content">
                     {
-                        tab === 1 ?   
+                        tab === 1 ?
                             <div className="teacher_page mt-2">
                                 <table responsive variant='#F3F6FA'>
                                     <thead className='table__head'>
@@ -113,9 +113,34 @@ const Objects = () => {
                                     </tbody>
                                 </table>
                             </div>
-                        : tab === 2 ? 
-                            "tab2"
-                        : null
+                            : tab === 2 ?
+                                <div className="teacher_page mt-2">
+                                    <table responsive variant='#F3F6FA'>
+                                        <thead className='table__head'>
+                                            <tr>
+                                                <th col-md-1>№</th>
+                                                <th col-md-2>Название</th>
+                                                <th col-md-2>Количество</th>
+                                                <th col-md-2>Стоимость</th>
+                                                <th col-md-2>Время</th>
+                                                <th col-md-2>Всe сумма</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className='table__body'>
+                                            {getId?.products?.map((item, index) => (
+                                                <tr key={item?.id}>
+                                                    <td col-md-1>{index + 1}</td>
+                                                    <td col-md-2>{item?.name}</td>
+                                                    <td col-md-2>{item?.amount}</td>
+                                                    <td col-md-2>{Number(item?.price)?.toLocaleString()}</td>
+                                                    <td col-md-2>{time(item?.created_at)}</td>
+                                                    <td col-md-2>{Number(item?.total_price)?.toLocaleString()}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                : null
                     }
                 </div>
             </Container>

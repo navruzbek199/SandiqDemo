@@ -3,8 +3,8 @@ import './System.scss'
 import { Col, Container, Row } from 'react-bootstrap'
 import SelectSearch from "react-select-search";
 import apiRoot from '../../../store/apiRoot';
-import { Bar, Pie } from 'react-chartjs-2';
-import LineChart, { data } from '../../../components/LineChart/LineChart';
+// import { Bar, Pie } from 'react-chartjs-2';
+// import LineChart, { data } from '../../../components/LineChart/LineChart';
 import { FaWarehouse } from "react-icons/fa";
 import { AiOutlineShopping } from 'react-icons/ai'
 import { BsBoxArrowDownLeft, BsBoxArrowUpLeft, BsBuildings } from 'react-icons/bs'
@@ -13,6 +13,7 @@ import Income from '../../../assets/image/svg/arrow-down-right-square-fill.svg'
 import Outgo from '../../../assets/image/svg/arrow-up-right-square-fill.svg'
 import ChevronDown from '../../../assets/image/chevron-down.svg'
 import Filter from '../../../assets/image/filter-outline.svg'
+import Chart from '../../../components/Chart/Chart';
 const System = () => {
 
   const token = localStorage.getItem('access_token')
@@ -20,10 +21,12 @@ const System = () => {
   const [options2, setOptions2] = useState([])
   const [options3, setOptions3] = useState([])
   const [options4, setOptions4] = useState([])
+  const [options5, setOptions5] = useState([])
   const [value1, setValue1] = useState("3")
   const [value2, setValue2] = useState("all")
   const [value3, setValue3] = useState("all")
   const [value4, setValue4] = useState("all")
+  const [value5, setValue5] = useState("all")
   const [monitoring, setMonitoring] = useState([])
   const [products, setProducts] = useState()
   const [linechart, setLinechart] = useState(null)
@@ -31,7 +34,7 @@ const System = () => {
   const [allShed, setAllShed] = useState([])
   const [allCategoryData, setAllCategoryData] = useState([])
   const [charts, setCharts] = useState(null)
-
+  const [objectList, setObjectList] = useState()
 
 
   const arrDate = [
@@ -124,15 +127,35 @@ const System = () => {
     })
     setOptions1(dates)
   }, [])
-
-
+  useEffect(() => {
+    apiRoot.get(`objects/list`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then((res) => {
+      console.log(res?.data, "obj");
+      setObjectList(res?.data)
+      const obj = res?.data?.map((item) => {
+        return {
+          name: item?.name,
+          value: item?.id
+        }
+      })
+      obj?.push({
+        name: "Все",
+        value: "all"
+      })
+      setOptions5(obj?.reverse())
+    })
+  }, [])
   const onSubmit = (e) => {
     e.preventDefault()
     const data = {
       date_id: value1,
       warehouse_id: value2,
       product_id: value3,
-      status: value4
+      status: value4,
+      object_id: value5
     }
     apiRoot.post(`products/monitoring/chart`, data, {
       headers: {
@@ -154,6 +177,7 @@ const System = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
+      console.log(res?.data,  "monitoring")
       setMonitoring(res?.data)
       setLengthData(res.data?.products?.length)
 
@@ -215,7 +239,8 @@ const System = () => {
       date_id: "3",
       warehouse_id: "all",
       product_id: "all",
-      status: "all"
+      status: "all",
+      object_id: "all"
     }
     apiRoot.post(`products/monitoring/chart`, data, {
       headers: {
@@ -236,6 +261,7 @@ const System = () => {
         Authorization: `Bearer ${token}`
       }
     }).then((res) => {
+      console.log(res?.data, "monitoring");
       setMonitoring(res?.data)
       setLengthData(res.data?.products?.length)
 
@@ -270,7 +296,7 @@ const System = () => {
         <Row>
           <form onSubmit={(e) => onSubmit(e)} >
             <div className="form_group_select mt-4">
-              <Col md="8">
+              <Col md="9">
                 <div className="form_filter_item">
                   <div className="form_control">
                     <label>
@@ -296,6 +322,19 @@ const System = () => {
                       onChange={setValue2}
                       search
                       placeholder="Выберите склад"
+                    />
+                    <img src={ChevronDown} alt="" />
+                  </div>
+                  <div className="form_control">
+                    <label>
+                      Выберите oбьекты
+                    </label>
+                    <SelectSearch
+                      options={options5}
+                      value={value5}
+                      onChange={setValue5}
+                      search
+                      placeholder="Выберите oбьекты"
                     />
                     <img src={ChevronDown} alt="" />
                   </div>
@@ -327,7 +366,7 @@ const System = () => {
                   </div>
                 </div>
               </Col>
-              <Col md={{ span: 2, offset: 1 }}>
+              <Col md={{ span: 3}}>
                 <div className='all_btn'>
                   <button className="save">Фильтр <img src={Filter} alt="filter_icon" /></button>
                 </div>
@@ -353,7 +392,7 @@ const System = () => {
             <div className="system_card_obj">
               <div className='title'>
                 <p>Обьекты</p>
-                <span>{products?.length}+ </span>
+                <span>{objectList?.length}</span>
               </div>
               <div className="photo">
                 <BsBuildings size={42} color='#fff' />
@@ -400,13 +439,14 @@ const System = () => {
         </Row>
         <div className="chart_menu">
           <Row>
-            <Col md="8">
-              <VerticalChart data={linechart}/>
+            <Col md="6">
+              <VerticalChart data={linechart} />
             </Col>
-            <Col md="4">
-              {
+            <Col md="6">
+              {/* {
                 charts && <LineChart data={charts} />
-              }
+              } */}
+              <Chart monitoring={monitoring?.objects}/>
             </Col>
           </Row>
         </div>
@@ -436,11 +476,11 @@ const System = () => {
                         <td col-md-1>{item?.warehouse?.name}</td>
                         <td col-md-1>{item?.delivery?.name}</td>
                         <td col-md-1>
-                          {item?.status === true ? 
-                              <img src={Income} alt="" />
-                            : item?.status === false ? 
+                          {item?.status === true ?
+                            <img src={Income} alt="" />
+                            : item?.status === false ?
                               <img src={Outgo} alt="" />
-                            : null
+                              : null
                           }
                         </td>
                       </tr>

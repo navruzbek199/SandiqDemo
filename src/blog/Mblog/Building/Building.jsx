@@ -165,8 +165,8 @@ const Building = () => {
                 </div>
                 <Row>
                     {objects?.map((item, index) => (
-                        <Col md="6" key={item?.id}>
-                            <div className="build_block">
+                        <Col md="6" key={item?.id} >
+                            <div className="build_block mb-3">
                                 <div className="block_item">
                                     <div className="block_img">
                                         <img src={build} alt="" />
