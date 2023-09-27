@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Auth from "../page/Login/_components/Auth/Auth";
-import Login from "../page/Login/Login";
 import PageNotFound from "../page/404NotFound/404NotFound";
 import Update from "../page/Login/_components/Update/Update";
 import Madmin from "../role/Madmin/Madmin";
@@ -16,17 +15,33 @@ import ProductItem from "../blog/Mblog/Product/_component/ProductItem/ProductIte
 import Objects from "../blog/Mblog/Building/_components/Objects/Objects";
 import Sms from "../blog/Mblog/Sms/Sms";
 import SmsHistory from "../blog/Mblog/Sms/_components/SmsHistory";
+import Layout from "../components/Layout/Layout";
+import Worker from "../blog/Mblog/Worker/Worker";
+import System from "../blog/Mblog/System/System";
+import Building from "../blog/Mblog/Building/Building";
+import Login from "../page/Login/Login";
 const RouterPage = () => {
   const token = localStorage.getItem("access_token");
   const navigate = useNavigate();
-  useEffect(() => {
-    if (token === null) {
-      navigate("/");
-    }
-  }, []);
+ 
+  const error = sessionStorage.getItem("err")
+
+  if (error) {
+    return <Routes>
+      <Route path='/' element={<PageNotFound />} />
+    </Routes>
+  }
+  if (token === null) {
+    return <Routes>
+      <Route path='/' element={<Login/>} >
+          <Route index path="/login" element={<Auth/>}/>
+      <Route path='/' element={<Navigate to={"/login"} />} />
+      </Route>
+    </Routes>
+  }
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Login />}>
           <Route index element={<Auth />} />
           {token !== null ? <Route path="update" element={<Update />} /> : null}
@@ -46,7 +61,21 @@ const RouterPage = () => {
           <Route path="/dashboard/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      </Routes> */}
+
+
+
+      <Layout>
+          <Routes>
+                <Route path='worker' element={<Worker/>} />
+                <Route path="system" element={<System/>}/>
+                <Route path="shed" element={<Warehouses/>}/> 
+                <Route path="objects" element={<Objects/>}/>
+                <Route path="sms" element={<Sms/>}/> 
+                <Route path="building" element={<Building/>}/>
+            <Route path='*' element={<Navigate to={"/"}/>}/>
+          </Routes>
+        </Layout>
     </div>
   );
 };

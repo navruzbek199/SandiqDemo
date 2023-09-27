@@ -1,159 +1,69 @@
 .login__edit {
     background: #FFFFFF;
-    border: 5px solid #E5EAF2;
-    border-radius: 20px;
-    width: 889px;
-    max-height: 600px;
-    padding: 39px 85px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
 
-    .left__edit {
-        display: block;
-
-        .title {
-            margin-bottom: 30px;
-
-            p {
-                font-family: 'SF Pro Display';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 21px;
-                text-align: center;
-                color: #23222B;
-                margin-bottom: 0;
-            }
-        }
-
-        .photos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 30px auto;
-
-            img {
-                object-fit: contain;
-                width: 75%;
-            }
-        }
-        .text {
-            p {
-                font-family: 'SF Pro Display';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 129.34%;
-                text-align: center;
-                color: #23222B;
-                margin-bottom: 14px;
-            }
-
-            a {
-                font-family: 'SF Pro Display';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 129.34%;
-                text-align: center;
-                color: #4030A4;
-                display: block;
-                text-decoration: none;
-            }
-        }
-    }
-
-    .line {
-        width: 2px;
-        height: 320px;
-        margin-right: 64px;
-        margin-left: 81px;
-        background-color: #C1CCDC;
-    }
 
     .eye_btns1 {
         position: absolute;
-        bottom: 82px;
+        bottom: 86px;
         right: 20px;
         cursor: pointer;
     }
 
     .eye_btns2 {
         position: absolute;
-        bottom: 83px;
+        bottom: 86px;
         right: 20px;
         cursor: pointer;
     }
-
-    .answer_modal {
-        position: absolute;
-        top: 85px;
-        right: 20px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #FCAF03;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 14px;
-        color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-    .item__photos {
-        padding-top: 48px;
-        margin-bottom: 16px;
-        img {
-            margin: 0 auto;
-            display: block;
-            object-fit: contain;
-        }
-    }
-    .item__tetxt {
-        p {
-            font-family: 'SF Pro Display';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 24px;
-            text-align: center;
-            color: #000000;
-        }
-    }
-
     .right__edit {
         .loginedit_form {
+            .form__text{
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 34px;
+            }
             form {
                 display: grid;
                 position: relative;
-
-                input {
-                    position: relative;
-                    border: 1px solid #C1CCDC;
-                    border-radius: 10px;
-                    height: 50px;
-                    padding-left: 18.17px;
-                    min-width: 302px;
-                    width: 100%;
-                    margin-bottom: 20px;
-                    outline: none;
-
-                    &::placeholder {
+                .form_item{
+                    width: 408px;
+                    label{
+                        color: #000;
                         font-family: 'SF Pro Display';
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 400;
-                        font-size: 14px;
-                        line-height: 17px;
-                        color: #C1CCDC;
+                        line-height: normal;
+                        margin-bottom: 8px;
+                    }   
+                    input {
+                        position: relative;
+                        border: 1px solid #C1CCDC;
+                        border-radius: 10px;
+                        height: 58px;
+                        padding-left: 18.17px;
+                        min-width: 408px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        outline: none;
+    
+                        &::placeholder {
+                            font-family: 'SF Pro Display';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 17px;
+                            color: #C1CCDC;
+                        }
                     }
                 }
 
                 .loginedit_btn {
-                    background: #C1CCDC;
+                    background: #B2B2B2;
                     border-radius: 6px;
                     font-family: 'SF Pro Display';
                     font-style: normal;
@@ -170,7 +80,7 @@
                         pointer-events: none;
                     }
                     &.active{
-                        background: #4030A4;
+                        background: #61D2A1;
                     }
                     // &:hover{
                     //     background: #251584;

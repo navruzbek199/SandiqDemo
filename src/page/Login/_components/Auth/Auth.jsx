@@ -8,6 +8,7 @@ import InputMask from "react-input-mask";
 import "./Auth.scss";
 import Noty from "noty";
 import apiRoot from "../../../../store/apiRoot";
+import brand_logo from "../../../../assets/image/sandiq_logo.svg";
 const Auth = () => {
   const [states, setStates] = useState(false);
   const [open, setOpen] = useState(false);
@@ -65,49 +66,53 @@ const Auth = () => {
       });
   };
   return (
-    <div>
+    <div className="login_auth">
       <form className="login_page__form" onSubmit={onSubmit}>
         <div className="form__title">
+          {/* <img src={brand_logo} alt="logo" /> */}
           <h4>Вход</h4>
-          <div>?</div>
         </div>
-        {/* {open && (
-          <Modal set={setOpen} height={370}>
-            <div className="item__photos">
-              <img src={modalImg} alt="" />
-            </div>
-            <div className="item__tetxt">
-              <p>"salom"</p>
-              <p>"salom"</p>
-            </div>
-          </Modal>
-        )} */}
-        <InputMask
-          type="text"
-          name="username"
-          placeholder="username"
-          required
-          className={errorInput ? "error" : null}
-          autoComplete="off"
-          onChange={(e) => num(e)}
-        />
-        <div className="input">
-          <input
-            type={states ? "text" : "password"}
-            name="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
+        <div className="form_control">
+          <label htmlFor="username">
+            Логин
+          </label>
+          <InputMask
+            type="text"
+            name="username"
+            placeholder="username"
             required
             className={errorInput ? "error" : null}
             autoComplete="off"
+            onChange={(e) => num(e)}
           />
-          <div className="eye_btn" onClick={toggleBtn}>
-            {states ? (
-              <img src={eye_btn} alt="eye" />
-            ) : (
-              <img src={noeye_btn} alt="eye" />
-            )}
+        </div>
+        <div className="form_control">
+          <label htmlFor="password">
+            Пароль
+          </label>
+          <div className="input">
+            <input
+              type={states ? "text" : "password"}
+              name="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className={errorInput ? "error" : null}
+              autoComplete="off"
+            />
+            <div className="eye_btn" onClick={toggleBtn}>
+              {states ? (
+                <img src={eye_btn} alt="eye" />
+              ) : (
+                <img src={noeye_btn} alt="eye" />
+              )}
+            </div>
           </div>
+        </div>
+        <div className="form_about">
+          <NavLink to="/login/restore">
+          Забыли пароль ?
+          </NavLink>
         </div>
         <button
           type="submit"
@@ -117,8 +122,14 @@ const Auth = () => {
         </button>
 
         <div className="form__text">
-          <NavLink to="/login/loginRestore">
-            Не помните логин или пароль?
+          <NavLink to="/login/uzb">
+            Yзб
+          </NavLink>
+          <NavLink to="/login/uz">
+            O’zb
+          </NavLink>
+          <NavLink to="/login/ru" className="active">
+            Рус
           </NavLink>
         </div>
       </form>

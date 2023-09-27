@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Header.scss';
 import { Container } from 'react-bootstrap'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import Logos from '../../assets/image/Vector.svg';
+import Logos from '../../assets/image/sandiq_logo.svg';
 import Account from '../Account/Account';
 import Notification from '../Notification/Notification';
 const SuperAdminHeader = () => {
@@ -13,9 +13,9 @@ const SuperAdminHeader = () => {
                     <nav>
                         <div className='nav__left'>
                             <NavLink to={"/home"}>
-                                <div className="nav__logo">
+                                {/* <div className="nav__logo">
                                     <img src={Logos} alt="" />
-                                </div>
+                                </div> */}
                             </NavLink>
                             {/* <ul className='nav__section'>
                                 <NavLink to="/superadmin/" className="title">

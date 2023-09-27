@@ -67,86 +67,79 @@ const Update = () => {
 
   return (
     <div className="login__edit">
-      <div className="left__edit">
-        <div className="title">
-          <p>
-            В целях безопасности рекомендуем вам придумать для себя новый логин
-            и пароль.
-          </p>
-        </div>
-        <div className="photos">
-          <img src={LogEdit} alt="warning" />
-        </div>
-        <div className="text">
-          {/* <p>Siz ushbu bosqichni o‘tkazib yuborishingiz va <br />
-                        akkaunt sozlamalarida login/parolni o‘zgartirishingiz mumkin.
-                    </p> */}
-        </div>
-      </div>
-      <div className="line"></div>
       <div className="right__edit">
         <div className="loginedit_form">
           <form onSubmit={onSubmit}>
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              required
-              value={newFio}
-              onChange={(e) => setNewFio(e.target.value)}
-              autoComplete="off"
-            />
-            <input
-              type="text"
-              name="fullname"
-              placeholder="Fullname"
-              required
-              value={newFullname}
-              onChange={(e) => setNewFullname(e.target.value)}
-              autoComplete="off"
-            />
-            <InputMask
-              type="text"
-              name="phone_number"
-              placeholder="Phone number"
-              value={newphoneNumber}
-              onChange={(e) => setNewphoneNumber(e.target.value)}
-              required
-              className={errorInput ? "error" : null}
-              mask="+\9\9\8\(99) 999-99-99"
-              maskChar=" "
-              autoComplete="off"
-            />
-            <input
-              type={states1 ? "text" : "password"}
-              name="password"
-              placeholder="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              autoComplete="off"
-              minLength={8}
-              maxLength={14}
-              required
-            />
-            {/* <div onClick={() => setClick(true)} className="answer_modal">
-              ?
+            <div className="form__text">
+                <h4>Изменение профиля</h4>
             </div>
-            {click && (
-              <Modal set={setClick} height={297}>
-                <div className="item__photoss">
-                  <img src={ModalImage2} alt="" />
-                </div>
-                <div className="item__tetxt">
-                  <p>empty</p>
-                </div>
-              </Modal>
-            )} */}
-            <div className="eye_btns1" onClick={toggleBtn1}>
-              {states1 ? (
-                <img src={eye_btn} alt="eye" />
-              ) : (
-                <img src={noeye_btn} alt="eye" />
-              )}
+            <div className="form_item">
+              <label htmlFor="fullname">
+                ФИО
+              </label>
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Fullname"
+                required
+                value={newFullname}
+                onChange={(e) => setNewFullname(e.target.value)}
+                autoComplete="off"
+              />
+            </div>
+            <div className="form_item">
+              <label htmlFor="phone_number">
+                Телефон
+              </label>
+              <InputMask
+                type="text"
+                name="phone_number"
+                placeholder="Phone number"
+                value={newphoneNumber}
+                onChange={(e) => setNewphoneNumber(e.target.value)}
+                required
+                className={errorInput ? "error" : null}
+                mask="+\9\9\8\(99) 999-99-99"
+                maskChar=" "
+                autoComplete="off"
+              />
+            </div>
+            <div className="form_item">
+              <label htmlFor="username">
+                Логин
+              </label>
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+                value={newFio}
+                onChange={(e) => setNewFio(e.target.value)}
+                autoComplete="off"
+              />
+            </div>
+            <div className="form_item">
+              <label htmlFor="password">
+                Новый пароль
+              </label>
+              <input
+                type={states1 ? "text" : "password"}
+                name="password"
+                placeholder="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                autoComplete="off"
+                minLength={8}
+                maxLength={14}
+                required
+              />
+              <div className="eye_btns1" onClick={toggleBtn1}>
+                {states1 ? (
+                  <img src={eye_btn} alt="eye" />
+                ) : (
+                  <img src={noeye_btn} alt="eye" />
+                )}
+              </div>
             </div>
             <button
               className={

@@ -1,38 +1,21 @@
 import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import './LoginHeader.scss'
-import brand_logo from "../../assets/image/Vector.svg";
+import brand_logo from "../../assets/image/sandiq_logo.svg";
+import mainIllus from '../../assets/image/login_page.svg'
 const LoginHeader = () => {
     return (
         <div className='login_header'>
-            <Container fluid="md">
-                <div className="login_page__head">
-                    <div className="head_lang">
-                        {/* {languages?.map(({code, name})=>(
-                            <a 
-                            key={code} 
-                            onClick={()=> {i18next.changeLanguage(code)}} 
-                            style={{
-                                opacity: currentLanguageCode !== code ? 0.5 : 1,
-                            }}
-                            className={{disabled: currentLanguageCode === code}}
-                            >
-                                {name}
-                            </a>
-                        ))
-                        } */}
+            <Container>
+                <div className="left_menu">
+                    <div className="brand">
+                        <img src={brand_logo} alt="logo" />
                     </div>
-                </div>
-                <div className="login_page__menu">
-                    <div className="login_page__menu__title">
-                        <img src={brand_logo} alt="brand" />
-                        <p>
-                            Складская CRM-система, которая помогает компаниям оптимизировать свои складские операции и сократить расходы.
-                        </p>
+                    <div className="illustation">
+                        <img src={mainIllus} alt="illustation" />
                     </div>
                 </div>
             </Container>
-
         </div>
     )
 }

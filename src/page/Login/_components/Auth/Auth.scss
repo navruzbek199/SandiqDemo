@@ -1,18 +1,17 @@
 .login_page__form {
     position: relative;
     background: #ffffff;
-    border: 5px solid #e5eaf2;
     border-radius: 20px;
-    max-width: 438px;
-    max-height: 338px;
-    padding: 28px 25px;
+    max-width: 408px;
+    max-height: 100%;
     margin: 0 auto;
     justify-content: center;
-    display: block;
+
     @media (max-width: 500px) {
         min-width: 340px;
         width: 100%;
     }
+
     .form__title {
         h4 {
             font-weight: 600;
@@ -27,6 +26,7 @@
             @media (max-width: 500px) {
                 display: none;
             }
+
             position: absolute;
             font-family: "SF Pro Display";
             font-style: normal;
@@ -49,13 +49,23 @@
         }
     }
 
+    .form_control {
+        label {
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 12px;
+        }
+    }
+
     input {
         position: relative;
         border: 1px solid #c1ccdc;
         border-radius: 10px;
-        max-width: 100%;
-        width: 255.14px;
-        height: 50px;
+        width: 408px;
+        height: 58px;
         margin: 0 auto;
         justify-content: center;
         display: block;
@@ -65,6 +75,7 @@
         color: #23222b;
         -webkit-text-security: start;
         background-color: #ffffff !important;
+
         &::placeholder {
             font-style: normal;
             font-weight: 400;
@@ -72,9 +83,11 @@
             line-height: 17px;
             color: #c1ccdc;
         }
+
         &:focus {
-            border: 1px solid #23222b;
+            border: 1px solid #61D2A1;
         }
+
         &.error {
             color: #ff2424;
             border: 1px solid #ff2424;
@@ -85,13 +98,14 @@
     }
 
     .form_btn {
+
         width: 100%;
-        max-width: 255.14px;
-        height: 50px;
+        width: 408px;
+        height: 58px;
         margin: 0 auto;
         justify-content: center;
         display: block;
-        background: #c1ccdc;
+        background: #B2B2B2;
         border-radius: 6px;
         outline: none;
         border: none;
@@ -101,36 +115,65 @@
         line-height: 19px;
         text-align: center;
         color: #edf6fd;
+        margin-top: 27px;
+
         &.active {
-            background: #4030a4;
+            background: #61D2A1;
         }
+
         &:hover {
-            background: #251584;
+            background: #61D2A1;
             border-radius: 6px;
         }
     }
 
     .form__text {
         margin-top: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 408px;
 
         a {
             font-family: "SF Pro Display";
+            color: #C4BECD;
+            font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 14px;
-            text-align: center;
-            color: #23222b;
-            text-decoration: none;
-            display: block;
+            line-height: 24px;
+            text-decoration: none !important;
+
+            &.active {
+                color: #000;
+            }
         }
     }
+
+    .form_about {
+        margin-top: 14px 0px 27px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        a {
+            color: #000;
+            font-family: "SF Pro Display";
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: none !important;
+            
+        }
+    }
+
     .input {
-        width: 255.14px;
-        height: 50px;
+        width: 408px;
+        height: 58px;
         margin: 0 auto;
         margin-bottom: 20px;
         position: relative;
+
         .eye_btn {
             position: absolute;
             right: 10px;
@@ -158,6 +201,7 @@
     width: 400px !important;
     height: 50px !important;
 }
+
 .noty_theme__mint.noty_bar .noty_body {
     font-family: "SF Pro Display";
     font-style: normal;
@@ -169,6 +213,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 #noty_layout__topCenter {
     top: 7% !important;
     left: 50%;
@@ -180,6 +225,7 @@
 .item__photos {
     margin-bottom: 0 !important;
     margin-top: 26px;
+
     img {
         margin: 0 auto;
         display: block;
@@ -198,6 +244,7 @@
         color: #000000;
         margin-bottom: 29px;
     }
+
     p:last-child {
         font-weight: 500;
         font-size: 14px;

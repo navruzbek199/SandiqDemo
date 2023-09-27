@@ -77,7 +77,7 @@ const Notification = () => {
     return (
         <div className='notification'>
             <div className='notification_icon' onClick={handleClick}>
-                <IoIosNotifications size={22} color='#fff' />  
+                <IoIosNotifications size={22} color='#000' />  
                 <div hidden={active}>
                 </div> 
             </div>
