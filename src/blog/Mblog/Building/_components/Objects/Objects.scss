@@ -15,6 +15,7 @@
         .className_title {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             a{
                 position: relative;
                 text-decoration: none;
@@ -31,7 +32,7 @@
                     font-weight: 600;
                     font-size: 28px;
                     line-height: 32px;
-                    color: #4030A4;
+                    color: #23222B;
                     margin-bottom: 0px;
                 }
             }
@@ -41,7 +42,7 @@
                 font-weight: 600;
                 font-size: 18px;
                 line-height: 22px;
-                color: #4030A4;
+                // color: #61D2A1;
                 margin-bottom: 0;
             }
             span{
@@ -73,8 +74,8 @@
             font-size: 14px;
             line-height: 17px;
             text-align: center;
-            color: #4030A4;
-            border: 1px solid #4030A4;
+            color: #FCAF03;
+            border: 1px solid #FCAF03;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -91,8 +92,8 @@
             line-height: 17px;
             text-align: center;
             color: #FFFFFF;
-            border: 1px solid #4030A4;
-            background-color: #4030A4;
+            border: 1px solid #FCAF03;
+            background-color: #FCAF03;
             border-radius: 10px;
             display: flex;
             align-items: center;

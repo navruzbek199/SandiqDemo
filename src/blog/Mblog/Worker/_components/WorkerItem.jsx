@@ -117,7 +117,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                     </div>
                 </td>
                 <td col-md-1>
-                    <div className="table_list_phone">
+                    <div className="">
                         +{item?.phone}
                     </div>
                 </td>

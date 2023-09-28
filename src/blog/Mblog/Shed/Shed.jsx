@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Shed.scss'
 import Add from '../../../assets/image/svg/add.svg';
 import { Container } from 'react-bootstrap'
@@ -11,6 +11,7 @@ import Noty from 'noty'
 import EditIcon from '../../../assets/image/svg/edit-text.png'
 import TrashIcon from '../../../assets/image/svg/trash-can.png'
 import { useNavigate } from 'react-router-dom';
+import { HiDotsVertical } from 'react-icons/hi'
 const Shed = () => {
   const [open, setOpen] = useState(false)
   const token = localStorage.getItem('access_token')
@@ -26,7 +27,24 @@ const Shed = () => {
   const [changeName, setChangeName] = useState()
   const [changeAddress, setChangeAddress] = useState()
   const [changeValue, setChangeValue] = useState()
+  const [click, setClick] = useState(null)
   const navigate = useNavigate()
+  const ref = useRef()
+  const handleClick = (id) => {
+    if (click?.bolen) {
+      setClick({
+        id: id,
+        bolen: false
+      })
+
+    } else {
+      setClick({
+        id: id,
+        bolen: true
+      })
+    }
+    
+  }
   const GetShed = () => {
     apiRoot.get(`warehouses/list`, {
       headers: {
@@ -68,7 +86,7 @@ const Shed = () => {
       headers: {
         Authorization: `Bearer ${token}`
       }
-    }).then((res)=>{
+    }).then((res) => {
       setChangeName(res?.data?.name)
       setChangeAddress(res?.data?.address)
       setChangeValue(res?.data?.worker?.name)
@@ -106,22 +124,22 @@ const Shed = () => {
         }
       },
     ).then(res => {
-        setDalete(false)
-        apiRoot.get(`warehouses/list`, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }).then((res) => {
-          setGetShed(res?.data)
-        })
-        setTimeout(function () {
-          new Noty({
-            text: "Склад успешно удалён!",
-            layout: "topCenter",
-            type: "success",
-            timeout: 2000
-          }).show()
-        }, 500)
+      setDalete(false)
+      apiRoot.get(`warehouses/list`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((res) => {
+        setGetShed(res?.data)
+      })
+      setTimeout(function () {
+        new Noty({
+          text: "Склад успешно удалён!",
+          layout: "topCenter",
+          type: "success",
+          timeout: 2000
+        }).show()
+      }, 500)
     })
   }
   const EditShed = (e) => {
@@ -135,7 +153,7 @@ const Shed = () => {
       headers: {
         Authorization: `Bearer ${token}`
       }
-    }).then((res)=>{
+    }).then((res) => {
       setEdit(false)
       apiRoot.get(`warehouses/list`, {
         headers: {
@@ -149,10 +167,24 @@ const Shed = () => {
     })
   }
 
+  // useEffect(() => {
+  //   const checkIfClickedOutside = e => {
+  //     if (click && ref.current && !ref.current.contains(e.target)) {
+  //       setClick({
+  //         bolen: false
+  //       })
+  //     }
+  //   }
+  //   document.addEventListener("mousedown", checkIfClickedOutside)
+  //   return () => {
+  //     document.removeEventListener("mousedown", checkIfClickedOutside)
+  //   }
+  // }, [click])
+
 
   return (
     <>
-      <Container fluid='md'>
+      <Container fluid='xxl'>
         <div className="teacher_menu">
           <div className="blog__add">
             <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
@@ -164,14 +196,46 @@ const Shed = () => {
         <img src="" alt="" />
         <div className="shed_list">
           {getShed?.map((item, index) => (
-            <Accordion defaultActiveKey={item?.id} key={item?.id}>
-              <Accordion.Item eventKey={item?.id}>
-                <Accordion.Header>
+            <div className='cards' key={item?.id}>
+              <div className='card_items' eventKey={item?.id}>
+                <div className='card_head'>
                   <div className="title">
                     <h4>{item?.name}</h4>
+                    <div className="info" onClick={() => handleClick(item?.id)} ref={ref}>
+                      <HiDotsVertical size={"30"} color={"#000"} className={click ? "active" : "noactive"} />
+                    </div>
+                    {click?.id === item?.id && click?.bolen ?
+                      <div className='info_icons'>
+                        <div className="btn_drop">
+                          <button type='submit' className='save' onClick={() => {
+                            setEdit(true)
+                            setId(item?.id)
+                            GetIdShed(item?.id)
+                            setClick({
+                              id : item?.id,
+                              bolen: false
+                            })
+                          }}>
+                            <img src={EditIcon} alt="" /> Изменить
+                          </button>
+                          <hr />
+                          <button type='submit' className='delete' onClick={() => {
+                            setDalete(true)
+                            setId(item?.id)
+                            setClick({
+                              id : item?.id,
+                              bolen: false
+                            })
+                          }}>
+                            <img src={TrashIcon} alt="" /> Удалить
+                          </button>
+                        </div>
+                      </div>
+                      : null
+                    }
                   </div>
-                </Accordion.Header>
-                <Accordion.Body>
+                </div>
+                <div className='card_body'>
                   <ul>
                     <li>
                       <p>Имя cклада:</p>
@@ -190,26 +254,13 @@ const Shed = () => {
                     </li>
                     <li className='form_btn_edit'>
                       <button type='submit' className='in' onClick={() => navigate(`${item?.id}`)}>
-                          Войти
-                      </button>
-                      <button type='submit' className='save' onClick={() => {
-                        setEdit(true)
-                        setId(item?.id)
-                        GetIdShed(item?.id)
-                      }}>
-                        <img src={EditIcon} alt="" />
-                      </button>
-                      <button type='submit' className='delete' onClick={()=>{
-                        setDalete(true)
-                        setId(item?.id)
-                        }}>
-                        <img src={TrashIcon} alt="" />
+                        Войти
                       </button>
                     </li>
                   </ul>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+                </div>
+              </div>
+            </div>
           ))}
           {/* {getShed?.map((item, index) => (
             <ul key={item?.id}>

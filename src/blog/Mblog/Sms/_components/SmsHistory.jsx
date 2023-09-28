@@ -9,6 +9,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore'
 import { GlobalContex } from '../../../../store/Contex'
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 const SmsHistory = () => {
     const { data } = useContext(GlobalContex)
     firebase.initializeApp({
@@ -56,11 +57,11 @@ const SmsHistory = () => {
     return (
         <div className='sms'>
             <div className="blog_header">
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <div className="blog">
                         <div className="className_title">
                             <Link to="/home">
-                                <img src={ArrowLeft} alt="" />
+                                <BsFillArrowLeftSquareFill size={32} color='#00827B' style={{marginRight: "12px"}}/>
                                 <div className="title">
                                     <h4>Заявка история</h4>
                                 </div>

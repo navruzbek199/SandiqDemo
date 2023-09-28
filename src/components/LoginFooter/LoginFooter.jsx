@@ -4,7 +4,7 @@ import './LoginFooter.scss';
 const LoginFooter = () => {
     return (
         <div className='login_footer'>
-            <Container fluid="md">
+            <Container fluid="xxl">
                 <div className="login_page__footer">
                     <div className='left_text'>
                         <p>Copyright © 2023 ASTROLAB</p>

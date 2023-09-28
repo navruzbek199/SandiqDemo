@@ -4,7 +4,7 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className='footer'>
-      <Container fluid="md">
+      <Container fluid="xxl">
         <div className="footer_menu">
           <div className='left_text'>
             <p>Copyright © 2023 Astrolab</p>

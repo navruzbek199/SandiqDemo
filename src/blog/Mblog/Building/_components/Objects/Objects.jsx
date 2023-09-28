@@ -8,6 +8,7 @@ import apiRoot from '../../../../../store/apiRoot'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore'
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 const Objects = () => {
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
@@ -53,13 +54,13 @@ const Objects = () => {
     return (
         <div className='objects'>
             <div className="blog_header">
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <div className="blog">
                         <div className="className_title">
                             <Link to="/home">
-                                <img src={ArrowLeft} alt="" />
+                                <BsFillArrowLeftSquareFill size={32} color='#00827B' style={{marginRight: "12px"}}/>
                                 <div className="title">
-                                    <img src={build} alt="" />
+                                    {/* <img src={build} alt="" /> */}
                                     <h4>{getId?.name}</h4>
                                 </div>
                             </Link>
@@ -72,7 +73,7 @@ const Objects = () => {
                     </div>
                 </Container>
             </div>
-            <Container>
+            <Container fluid={"xxl"}>
                 <Row>
                     <Col md={6}>
                         <div className="tab_table">

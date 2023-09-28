@@ -10,6 +10,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore'
 import Noty from 'noty'
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 const Sms = () => {
     firebase.initializeApp({
         apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
@@ -127,11 +128,11 @@ const Sms = () => {
     return (
         <div className='sms'>
             <div className="blog_header">
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <div className="blog">
                         <div className="className_title">
                             <Link to="/home">
-                                <img src={ArrowLeft} alt="" />
+                                <BsFillArrowLeftSquareFill size={32} color='#00827B' style={{marginRight: "12px"}}/>
                                 <div className="title">
                                     <h4>Заявка</h4>
                                     <h2>

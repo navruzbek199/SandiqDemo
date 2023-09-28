@@ -3,51 +3,124 @@
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     gap: 10px;
-    .accordion-header {
-        gap: 10px;
-        padding-left: 0;
-        margin-right: 20px;
-        cursor: pointer;
-        background-color: #fff;
-        width: 100%;
-        height: 100px;
-        background: #4030a4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        .accordion-button {
-            background: #4030a4;
-            width: 100%;
-            height: 100px;
-            outline: none !important;
-            outline-style: none !important;
-            border: none !important;
-            color: #fff !important;
-            box-shadow: inset !important;
-            &:focus {
-                border: none !important;
-            }
-            &::after {
-                background-image: url("../../../assets/image/svg/arr-01.svg");
-                color: #fff !important;
-            }
-        }
-        .title {
-            h4 {
-                font-family: "SF Pro Display";
-                font-style: normal;
-                font-weight: 700;
-                font-size: 22px;
-                line-height: 129.34%;
-                text-align: center;
-                color: #ffffff;
-                margin-bottom: 0;
+    .cards{
+        position: relative;
+        .card_items{
+            background-color: #fff;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 20px !important;
+            .card_head{
+                gap: 10px;
+                padding-left: 0;
+                margin-right: 20px;
+                cursor: pointer;
+                background-color: #fff;
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 12px;
+                border-top-left-radius: 20px !important;
+                border-top-right-radius: 20px !important;
+                border-bottom: 3px solid #edf6fd;
+                .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    h4 {
+                        font-family: "SF Pro Display";
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 129.34%;
+                        text-align: center;
+                        margin-bottom: 0;
+                    }
+                    .info{
+                        position: relative;
+                    }
+                    svg{
+                        padding: 5px;
+                    }
+                    svg:hover{
+                        background-color: #a0abbe;
+                        border-radius: 50%;
+                        padding: 5px;
+                    }
+                    .info_icons{
+                        position: absolute;
+                        top: 60px;
+                        display: block;
+                        padding: 10px;
+                        width: 140px;
+                        min-height: 90px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+                        border-radius: 15px;
+                        right: 0;
+                        z-index: 99; 
+                        .btn_drop{
+                            hr {
+                                margin: 0.5rem 0;
+                                color: inherit;
+                                border: 0;
+                                border-top: var(--bs-border-width) solid;
+                                opacity: .25;
+                            }
+                            .delete {
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                                background: #ff2424;
+                                border-radius: 6px;
+                                font-family: "SF Pro Display";
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: center;
+                                color: #000;
+                                height: 30px;
+                                width: 30px;
+                                outline: none;
+                                border: none;
+                                img {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                            .save {
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                                background: #fcaf03;
+                                border-radius: 6px;
+                                font-family: "SF Pro Display";
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                text-align: center;
+                                color: #000;
+                                height: 30px;
+                                width: 30px;
+                                outline: none;
+                                border: none;
+                                img {
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        } 
+                    }
+                }
             }
         }
     }
-    .accordion-body {
+    .card_body {
+        padding: 14px;
         ul {
             padding-left: 0;
             li {
@@ -104,11 +177,11 @@
                 }
             }
             .in {
-                background: #4030a4;
+                background: #00827B;
                 border-radius: 6px;
                 font-family: "SF Pro Display";
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 font-size: 16px;
                 line-height: 19px;
                 text-align: center;
@@ -176,7 +249,7 @@
                     background: #fff !important;
                     color: #23222b;
                     &:hover {
-                        background: #4030a4 !important;
+                        background: #00827B !important;
                         color: #fff;
                     }
                 }
@@ -235,7 +308,7 @@ select {
         position: absolute;
         top: 0;
         left: 50%;
-        background-color: #4030a4 !important;
+        background-color: #00827B !important;
         color: #fff;
     }
 }

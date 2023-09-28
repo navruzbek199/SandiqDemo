@@ -41,7 +41,7 @@ const RouterPage = () => {
   }
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Login />}>
           <Route index element={<Auth />} />
           {token !== null ? <Route path="update" element={<Update />} /> : null}
@@ -61,11 +61,11 @@ const RouterPage = () => {
           <Route path="/dashboard/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
-      </Routes> */}
+      </Routes>
 
 
 
-      <Layout>
+      {/* <Layout>
           <Routes>
                 <Route path='worker' element={<Worker/>} />
                 <Route path="system" element={<System/>}/>
@@ -75,7 +75,7 @@ const RouterPage = () => {
                 <Route path="building" element={<Building/>}/>
             <Route path='*' element={<Navigate to={"/"}/>}/>
           </Routes>
-        </Layout>
+        </Layout> */}
     </div>
   );
 };

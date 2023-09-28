@@ -23,7 +23,7 @@ const MyProduct = () => {
     }, [])
     return (
         <div className='my_product'>
-            <Container fluid="md">
+            <Container fluid="xxl">
                 <div className="teacher_page mt-4">
                     <table responsive variant='#F3F6FA'>
                         <thead className='table__head'>

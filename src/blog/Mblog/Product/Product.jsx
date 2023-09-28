@@ -140,7 +140,7 @@ const Product = () => {
 
     return (
         <div>
-            <Container fluid='md'>
+            <Container fluid='xxl'>
                 <div className="teacher_menu">
                     <div className="blog__add">
                         <button className='add__btn add_teacher' onClick={() => setOpen(true)}>

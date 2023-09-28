@@ -13,7 +13,7 @@ const Main = () => {
     return (
         <div className='main'>
             <div className="blog_header">
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <div className="blog">
                         <div className="tab_list">
                             <ul>

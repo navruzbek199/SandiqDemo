@@ -6,13 +6,13 @@
         margin-bottom: 30px;
 
         .add__btn {
-            background: #FCAF03;
+            background: #00827B;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 54px;
-            font-weight: 400;
+            font-weight: 700;
             font-size: 16px;
             line-height: 19px;
             text-align: center;
@@ -115,23 +115,23 @@
             }
 
             .table_list {
-                color: #4030A4;
+                color: #00827B;
                 cursor: pointer;
             }
+            
 
             .table_list_phone {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #4030A4;
                 cursor: pointer;
-                border: 1px solid #4030A4;
+                border: 1px solid #00827B;
                 border-radius: 6px;
                 padding: 7px 10px;
                 max-width: 142px;
 
                 &:hover {
-                    background-color: #4030A4;
+                    background-color: #00827B;
                     color: #FFFFFF;
                 }
             }
@@ -163,7 +163,7 @@
     .teacher_modal_name {
         width: 100%;
         height: 100px;
-        background-color: #4030A4;
+        background-color: #00827B;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -277,7 +277,7 @@
             }
 
             input[type='radio']:checked:after {
-                background: #4030A4;
+                background: #00827B;
             }
 
             input[type='radio'] {
@@ -362,11 +362,11 @@
             justify-content: center;
 
             button {
-                background: #FCAF03;
+                background: #00827B;
                 border-radius: 6px;
                 font-family: 'SF Pro Display';
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 font-size: 16px;
                 line-height: 19px;
                 text-align: center;
@@ -511,7 +511,7 @@
     .code_title {
         width: 100%;
         height: 100px;
-        background-color: #4030A4;
+        background-color: #00827B;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -594,7 +594,7 @@
         margin-top: 30px;
 
         button {
-            background-color: #4030A4;
+            background-color: #00827B;
             border-radius: 6px;
             font-family: 'SF Pro Display';
             font-style: normal;

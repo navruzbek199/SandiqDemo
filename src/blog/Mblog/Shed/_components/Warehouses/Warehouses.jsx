@@ -10,6 +10,7 @@ import Income from '../../../../../assets/image/svg/arrow-down-right-square-fill
 import Outgo from '../../../../../assets/image/svg/arrow-up-right-square-fill.svg'
 import moment from 'moment'
 import MyProduct from '../MyProduct/MyProduct'
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 const Warehouses = () => {
     const { id } = useParams()
     // const tabRef = useRef(1)
@@ -63,13 +64,13 @@ const Warehouses = () => {
         <>
             <div className="warehouses">
                 <div className="blog_header">
-                    <Container fluid="md">
+                    <Container fluid="xxl">
                         <div className="blog">
                             <div className="className_title">
                                 <Link to="/home">
-                                    <img src={ArrowLeft} alt="" />
+                                    <BsFillArrowLeftSquareFill size={32} color='#00827B' style={{marginRight: "12px"}}/>
                                     <div className="title">
-                                        <h4>{getId?.name} cклад</h4>
+                                        <h4>{getId?.name}</h4>
                                     </div>
                                 </Link>
                                 <div className="title">
@@ -81,7 +82,7 @@ const Warehouses = () => {
                         </div>
                     </Container>
                 </div>
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <Row>
                         <Col md={5}>
                             <div className="tab_table">

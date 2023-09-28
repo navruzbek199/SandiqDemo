@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import ArrowLeft from '../../../../../assets/image/svg/arrow-left.png'
 import { Container } from 'react-bootstrap'
 import apiRoot from '../../../../../store/apiRoot'
+import {BsFillArrowLeftSquareFill} from 'react-icons/bs'
 const ProductItem = () => {
     const { id } = useParams()
     const token = localStorage.getItem('access_token')
@@ -23,11 +24,11 @@ const ProductItem = () => {
     return (
         <div className='product_item'>
             <div className="blog_header">
-                <Container fluid="md">
+                <Container fluid="xxl">
                     <div className="blog">
                         <div className="className_title">
                             <Link to="/home">
-                                <img src={ArrowLeft} alt="" />
+                               <BsFillArrowLeftSquareFill size={32} color='#00827B' style={{marginRight: "12px"}}/>
                                 <div className="title">
                                     <h4>{getId?.name}</h4>
                                 </div>
@@ -41,7 +42,7 @@ const ProductItem = () => {
                     </div>
                 </Container>
             </div>
-            <Container>
+            <Container fluid="xxl">
                 <div className="tab_content">
                     <div className="teacher_page mt-4">
                         <table responsive variant='#F3F6FA'>

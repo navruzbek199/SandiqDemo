@@ -10,7 +10,7 @@ const PageNotFound = () => {
    
   return (
     <div className='page_404'>
-      <Container fluid="md">
+      <Container fluid="xxl">
       <div className="page_404__head">
         <NavLink to={"/home"}>
           <div className="nav__logo">

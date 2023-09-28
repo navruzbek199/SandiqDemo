@@ -36,7 +36,7 @@
                     font-weight: 600;
                     font-size: 28px;
                     line-height: 32px;
-                    color: #4030A4;
+                    color: #23222B;
                     margin-bottom: 0px;
                 }
             }
@@ -47,7 +47,7 @@
                 font-weight: 600;
                 font-size: 18px;
                 line-height: 22px;
-                color: #4030A4;
+                color: #23222B;
                 margin-bottom: 0;
             }
 
@@ -68,7 +68,7 @@
                     font-weight: 600;
                     font-size: 18px;
                     line-height: 22px;
-                    color: #4030A4;
+                    color: #23222B;
                     margin-bottom: 0;
                 }
             }
@@ -120,7 +120,7 @@
                 }
     
                 .table_list {
-                    color: #4030A4;
+                    color: #61D2A1;
                     cursor: pointer;
                 }
     
@@ -128,15 +128,15 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: #4030A4;
+                    color: #61D2A1;
                     cursor: pointer;
-                    border: 1px solid #4030A4;
+                    border: 1px solid #61D2A1;
                     border-radius: 6px;
                     padding: 7px 10px;
                     max-width: 142px;
     
                     &:hover {
-                        background-color: #4030A4;
+                        background-color: #61D2A1;
                         color: #FFFFFF;
                     }
                 }

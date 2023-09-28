@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import build from '../../../assets/image/ABEKT.svg'
 import Add from '../../../assets/image/svg/add.svg';
@@ -10,6 +10,7 @@ import EditIcon from '../../../assets/image/svg/edit-text.png'
 import TrashIcon from '../../../assets/image/svg/trash-can.png'
 import Noty from 'noty'
 import { useNavigate } from 'react-router-dom';
+import { HiDotsVertical } from 'react-icons/hi';
 const Building = () => {
     const token = localStorage.getItem('access_token')
     const navigate = useNavigate()
@@ -26,6 +27,23 @@ const Building = () => {
     const [changeName, setChangeName] = useState()
     const [changeAddress, setChangeAddress] = useState()
     const [changeValue, setChangeValue] = useState()
+    const [click, setClick] = useState(null)
+    const ref = useRef()
+    const handleClick = (id) => {
+      if (click?.bolen) {
+        setClick({
+          id: id,
+          bolen: false
+        })
+  
+      } else {
+        setClick({
+          id: id,
+          bolen: true
+        })
+      }
+    }
+    
     const AllObject = () => {
         apiRoot.get('objects/list', {
             headers: {
@@ -154,7 +172,7 @@ const Building = () => {
 
     return (
         <div className='building'>
-            <Container>
+            <Container fluid="xxl">
                 <div className="teacher_menu">
                     <div className="blog__add">
                         <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
@@ -163,44 +181,83 @@ const Building = () => {
                         </button>
                     </div>
                 </div>
-                <Row>
+                <div className='build_list'>
                     {objects?.map((item, index) => (
-                        <Col md="6" key={item?.id} >
-                            <div className="build_block mb-3">
-                                <div className="block_item">
-                                    <div className="block_img">
-                                        <img src={build} alt="" />
+                        <>
+                            <div className='cards' key={item?.id}>
+                                <div className='card_items' eventKey={item?.id}>
+                                    <div className='card_head'>
+                                        <div className="title">
+                                            <h4>{item?.name}</h4>
+                                            <div className="info" onClick={() => handleClick(item?.id)} ref={ref}>
+                                                <HiDotsVertical size={"30"} color={"#000"} className={click ? "active" : "noactive"} />
+                                            </div>
+                                            {click?.id === item?.id && click?.bolen ?
+                                                <div className='info_icons'>
+                                                    <div className="btn_drop">
+                                                        <button type='submit' className='save' onClick={() => {
+                                                            setEdit(true)
+                                                            setId(item?.id)
+                                                            GetIdShed(item?.id)
+                                                            setClick({
+                                                                id: item?.id,
+                                                                bolen: false
+                                                            })
+                                                        }}>
+                                                            <img src={EditIcon} alt="" /> Изменить
+                                                        </button>
+                                                        <hr />
+                                                        <button type='submit' className='delete' onClick={() => {
+                                                            setDalete(true)
+                                                            setId(item?.id)
+                                                            setClick({
+                                                                id: item?.id,
+                                                                bolen: false
+                                                            })
+                                                        }}>
+                                                            <img src={TrashIcon} alt="" /> Удалить
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                : null
+                                            }
+                                        </div>
                                     </div>
-                                    <div className="block_title">
-                                        <p>Имя объекта: <span>{item?.name}</span></p>
-                                        <p>Адрес объекта: <span>{item?.address}</span> </p>
-                                        <p>Имя сотрудника: <span>{item?.worker?.name}</span> </p>
-                                        <p>Телефон сотрудника: <span>+{item?.worker?.phone}</span> </p>
+                                    <div className='card_body'>
+                                        <ul>
+                                            <li>
+                                                <p>Имя объекта:</p>
+                                                <p className='line'></p>
+                                                <p>{item?.name}</p>
+                                            </li>
+                                            <li>
+                                                <p>Адрес объекта:</p>
+                                                <p className='line'></p>
+                                                <p>{item?.address}</p>
+                                            </li>
+                                            <li>
+                                                <p>Имя сотрудника:</p>
+                                                <p className='line'></p>
+                                                <p>{item?.worker?.name}</p>
+                                            </li>
+                                            <li>
+                                                <p>Телефон сотрудника:</p>
+                                                <p className='line'></p>
+                                                <p>+{item?.worker?.phone}</p>
+                                            </li>
+                                            <li className='form_btn_edit'>
+                                                <button type='submit' className='in' onClick={() => navigate(`objects/${item?.id}`)}>
+                                                    Войти
+                                                </button>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </div>
-                                <div className="btn_build">
-                                    <button type='submit' className='in' onClick={() => navigate(`objects/${item?.id}`)}>
-                                        Войти
-                                    </button>
-                                    <button type='submit' className='save' onClick={() => {
-                                        setEdit(true)
-                                        setId(item?.id)
-                                        GetIdShed(item?.id)
-                                    }}>
-                                        <img src={EditIcon} alt="" />
-                                    </button>
-                                    <button type='submit' className='delete' onClick={() => {
-                                        setDalete(true)
-                                        setId(item?.id)
-                                    }}>
-                                        <img src={TrashIcon} alt="" />
-                                    </button>
                                 </div>
                             </div>
-                        </Col>
+                        </>
                     ))
                     }
-                </Row>
+                </div>
             </Container>
             {open && <Modal set={setOpen} height={450} maxWidth={830} cancel={true}>
                 <div className="teacher_add_modal">

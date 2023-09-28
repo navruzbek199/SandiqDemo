@@ -5,7 +5,7 @@ import Chevron from '../../assets/image/svg/Vector.svg';
 import ChevronUp from '../../assets/image/svg/VectorUp.svg';
 import Profile from '../../assets/image/svg/Group 41.svg';
 import LogOut from '../../assets/image/svg/Group 43.svg';
-import UserImg from '../../assets/image/svg/Group 1.svg';
+import UserImg from '../../assets/image/admin.jpg';
 import './Account.scss'
 const Account = () => {
     const token = localStorage.getItem('access_token')

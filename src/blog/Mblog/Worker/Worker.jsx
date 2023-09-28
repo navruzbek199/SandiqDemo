@@ -61,7 +61,7 @@ const Worker = () => {
 
     return (
         <div>
-            <Container fluid='md'>
+            <Container fluid='xxl'>
                 <div className="teacher_menu">
                     <div className="blog__add">
                         <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
@@ -87,7 +87,7 @@ const Worker = () => {
                         </thead>
                         <tbody className='table__body'>
                             {
-                                allworker?.map((item, index) => (
+                                allworker?.filter(elem => elem?.role !== "driver")?.map((item, index) => (
                                     <WorkerItem key={item?.id} item={item} index={index} setAllworker={setAllworker} />
                                 ))
                             }

@@ -292,7 +292,7 @@ const System = () => {
 
   return (
     <div className='system'>
-      <Container fluid="md">
+      <Container fluid="xxl">
         <Row>
           <form onSubmit={(e) => onSubmit(e)} >
             <div className="form_group_select mt-4">

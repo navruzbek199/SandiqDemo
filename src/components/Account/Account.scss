@@ -7,12 +7,12 @@
         align-items: center;
         .user_image_upload{
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
         }
         img {
-            object-fit: contain;            
+            object-fit: contain;  
         }
 
         p {
@@ -22,7 +22,7 @@
             font-size: 16px;
             line-height: 18px;
             text-align: right;
-            color: #000;
+            color: #fff;
             margin-left: 10px;
             margin-right: 26px;
             margin-bottom: 0;
