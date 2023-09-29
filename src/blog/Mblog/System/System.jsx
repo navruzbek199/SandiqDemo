@@ -384,7 +384,7 @@ const System = () => {
                 </span>
               </div>
               <div className="photo">
-                <FaWarehouse size={42} color='#fff' />
+                <FaWarehouse size={42} color='#2979FF' />
               </div>
             </div>
           </Col>
@@ -395,7 +395,7 @@ const System = () => {
                 <span>{objectList?.length}</span>
               </div>
               <div className="photo">
-                <BsBuildings size={42} color='#fff' />
+                <BsBuildings size={42} color='#FF7A50' />
               </div>
             </div>
           </Col>
@@ -406,7 +406,7 @@ const System = () => {
                 <span>{products?.length}+ </span>
               </div>
               <div className="photo">
-                <AiOutlineShopping size={42} color='#fff' />
+                <AiOutlineShopping size={42} color='#C593F5' />
               </div>
             </div>
           </Col>
@@ -419,7 +419,7 @@ const System = () => {
                 </span>
               </div>
               <div className="photo">
-                <BsBoxArrowDownLeft size={36} color='#fff' />
+                <BsBoxArrowDownLeft size={36} color='#00CE96' />
               </div>
             </div>
           </Col>
@@ -432,7 +432,7 @@ const System = () => {
                 </span>
               </div>
               <div className="photo">
-                <BsBoxArrowUpLeft size={36} color='#fff' />
+                <BsBoxArrowUpLeft size={36} color='#FF4960' />
               </div>
             </div>
           </Col>

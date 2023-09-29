@@ -50,6 +50,20 @@ const Auth = () => {
               navigate("update");
             }
           }
+          if(res?.data?.role === "arxitektor"){
+            if(res?.data?.status === true){
+              navigate("arxitector")
+            }else {
+              navigate("update");
+            }
+          }
+          if(res?.data?.role === "Kasser"){
+            if(res?.data?.status === true){
+              navigate("cash")
+            }else {
+              navigate("update");
+            }
+          }
         }
       })
       .catch((err) => {

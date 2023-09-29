@@ -49,7 +49,7 @@ const Product = () => {
             setId(res?.data?.id)
         })
     }
-    
+
     useEffect(() => {
         apiRoot.get(`products/list`, {
             headers: {
@@ -143,10 +143,13 @@ const Product = () => {
             <Container fluid='xxl'>
                 <div className="teacher_menu">
                     <div className="blog__add">
-                        <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
-                            <img src={Add} alt="icon_add" />
-                            Добавить продукт
-                        </button>
+                        {localStorage.getItem("role") !== "arxitektor" ?
+                            <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
+                                <img src={Add} alt="icon_add" />
+                                Добавить продукт
+                            </button>
+                            : null
+                        }
                     </div>
                 </div>
                 <div className="teacher_page">
@@ -158,9 +161,15 @@ const Product = () => {
                                 <th col-md-2>Количество</th>
                                 <th col-md-1>Единица</th>
                                 <th col-md-2>Стоимость</th>
-                                <th col-md-1></th>
-                                <th col-md-1></th>
-                                <th col-md-1></th>
+                                {
+                                    localStorage.getItem("role") !== "arxitektor" ? 
+                                    <>
+                                    <th col-md-1></th>
+                                    <th col-md-1></th>
+                                    <th col-md-1></th>
+                                    
+                                    </> : null
+                                }
                             </tr>
                         </thead>
                         <tbody className='table__body'>
@@ -170,22 +179,28 @@ const Product = () => {
                                     <td col-md-2>{item?.name} </td>
                                     <td col-md-2>{item?.amount} </td>
                                     <td col-md-1>{item?.size}</td>
-                                    <td col-md-1>{item?.price}</td>
-                                    <td col-md-1 className='table_info' onClick={() => navigate(`product/${item?.id}`)}>
-                                        <img src={Info} alt="editImage" />
-                                    </td>
-                                    <td col-md-1 className='table_edit' onClick={() => {
-                                        setEdit(true)
-                                        GetProductId(item?.id)
-                                    }}>
-                                        <img src={Edit} alt="editImage" />
-                                    </td>
-                                    <td col-md-1 className='table_trash' onClick={() => {
-                                        setDalete(true)
-                                        GetProductId(item?.id)
-                                    }}>
-                                        <img src={TrashIcon} alt="editImage" />
-                                    </td>
+                                    <td col-md-1>{Number(item?.price)?.toLocaleString()} сум</td>
+                                    {localStorage.getItem("role") !== "arxitektor" ?
+                                        <>
+                                            <td col-md-1 className='table_info' onClick={() => navigate(`product/${item?.id}`)}>
+                                                <img src={Info} alt="editImage" />
+                                            </td>
+                                            <td col-md-1 className='table_edit' onClick={() => {
+                                                setEdit(true)
+                                                GetProductId(item?.id)
+                                            }}>
+                                                <img src={Edit} alt="editImage" />
+                                            </td>
+                                            <td col-md-1 className='table_trash' onClick={() => {
+                                                setDalete(true)
+                                                GetProductId(item?.id)
+                                            }}>
+                                                <img src={TrashIcon} alt="editImage" />
+                                            </td>
+                                        </> : null  
+
+                                    }
+
                                 </tr>
                             ))
                             }
@@ -313,7 +328,7 @@ const Product = () => {
                     </div>
                     <div className="delete_btn gap-2">
                         <button className='cancel' onClick={() => setDalete(false)}>Отменить</button>
-                        <button onClick={()=>onSubmitDelete()}>Удалить</button>
+                        <button onClick={() => onSubmitDelete()}>Удалить</button>
                     </div>
                 </div>
             </Modal>}

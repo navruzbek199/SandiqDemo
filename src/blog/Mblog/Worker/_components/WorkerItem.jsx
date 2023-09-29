@@ -112,7 +112,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                 <td col-md-2>{item?.name} </td>
                 <td col-md-1>{item?.username}</td>
                 <td col-md-1>
-                    <div className="table_list_phone">
+                    <div className={item?.role === "s_admin" ? "type_1" : item?.role === "Prorap" ? "type_2" : item?.role === "expeditor" ? "type_3" : item?.role === "Kasser" ? "type_4" : item?.role === "arxitektor" ? "type_5" : null}>
                         {item?.role}
                     </div>
                 </td>

@@ -135,6 +135,66 @@
                     color: #FFFFFF;
                 }
             }
+            .type_1{
+                color: #2979FF;
+                cursor: pointer;
+                background-color: #D8E7FF;
+                border: 1px solid #D8E7FF;
+                padding: 7px 10px;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+            .type_2{
+                color: #C593F5;
+                cursor: pointer;
+                background-color: #F7E7FF;
+                border: 1px solid #F7E7FF;
+                padding: 7px 10px;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+            .type_3{
+                color: #00CE96;
+                cursor: pointer;
+                background-color: #D4FDE5;
+                border: 1px solid #D4FDE5;
+                padding: 7px 10px;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+            .type_4{
+                color: #FF7A50;
+                cursor: pointer;
+                background-color: #FFF4DB;
+                border: 1px solid #FFF4DB;
+                padding: 7px 10px;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
+            .type_5{
+                color: #FF4960;
+                cursor: pointer;
+                background-color: #FFE1E6;
+                border: 1px solid #FFE1E6;
+                padding: 7px 10px;
+                min-width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+            }
 
             .table_edit {
                 cursor: pointer;

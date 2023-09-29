@@ -34,8 +34,8 @@ const VerticalChart = ({data}) => {
                     
                 />
                 <Legend />
-                <Bar className='chart' barSize={15} dataKey="ketgan" fill="#FF2424" radius={50} width={"10px"} cursor={"pointer"} />
-                <Bar className='chart' barSize={15} dataKey="kelgan" fill="#008700" radius={50} width={"10px"} cursor={"pointer"}/>
+                <Bar className='chart' barSize={15} dataKey="ketgan" fill="#FF4960" radius={50} width={"10px"} cursor={"pointer"} />
+                <Bar className='chart' barSize={15} dataKey="kelgan" fill="#00CE96" radius={50} width={"10px"} cursor={"pointer"}/>
             </BarChart>
         </ResponsiveContainer>
     )

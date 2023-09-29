@@ -174,12 +174,15 @@ const Building = () => {
         <div className='building'>
             <Container fluid="xxl">
                 <div className="teacher_menu">
-                    <div className="blog__add">
-                        <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
-                            <img src={Add} alt="icon_add" />
-                            Добавить объект
-                        </button>
-                    </div>
+                    {localStorage.getItem("role") !== "arxitektor" ? 
+                        <div className="blog__add">
+                            <button className='add__btn add_teacher' onClick={() => setOpen(true)}>
+                                <img src={Add} alt="icon_add" />
+                                Добавить объект
+                            </button>
+                        </div>
+                        : null
+                    }
                 </div>
                 <div className='build_list'>
                     {objects?.map((item, index) => (

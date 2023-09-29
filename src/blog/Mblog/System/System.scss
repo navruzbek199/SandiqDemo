@@ -48,7 +48,7 @@
                 gap: 24px;
                 
                 .save {
-                    background: #5C60F8;
+                    background: #00827B;
                     border-radius: 6px;
                     font-family: 'SF Pro Display';
                     font-style: normal;
@@ -70,7 +70,7 @@
                 }
 
                 .clear {
-                    background-color: #4030A4;
+                    background-color: #00827B;
                     border-radius: 6px;
                     font-family: 'SF Pro Display';
                     font-style: normal;
@@ -99,21 +99,22 @@
         display: flex;
         place-items: center;
         justify-content: space-around;
-        background: #C593F5;
+        background: #D8E7FF;
+        border: 1px solid #2979FF;
         p {
             font-size: 19px;
             font-style: normal;
             font-weight: 700;
             letter-spacing: .4px;
             line-height: 24px;
-            color: #fff;
+            color: #2979FF;
             margin-bottom: 0;
         }
         span{
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            color: #fff;
+            color: #2979FF;
         }
     }
 
@@ -123,22 +124,23 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #FCAF03;
+        background: #F7E7FF;
         justify-content: space-around;
+        border: 1px solid #C593F5;
         p {
             font-size: 19px;
             font-style: normal;
             font-weight: 700;
             letter-spacing: .4px;
             line-height: 24px;
-            color: #fff;
+            color: #C593F5;
             margin-bottom: 0;
         }
         span{
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            color: #fff;
+            color: #C593F5;
         }
     }
     .system_card_obj{
@@ -147,22 +149,23 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #FF7A50;
+        background: #FFF4DB;
         justify-content: space-around;
+        border: 1px solid #FF7A50;
         p {
             font-size: 19px;
             font-style: normal;
             font-weight: 700;
             letter-spacing: .4px;
             line-height: 24px;
-            color: #fff;
+            color: #FF7A50;
             margin-bottom: 0;
         }
         span{
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            color: #fff;
+            color: #FF7A50;
         }
     }
 
@@ -172,22 +175,23 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #FF4960;
+        background: #FFE1E6;
         justify-content: space-around;
+        border: 1px solid #FF4960;
         p {
             font-size: 19px;
             font-style: normal;
             font-weight: 700;
             letter-spacing: .4px;
             line-height: 24px;
-            color: #fff;
+            color: #FF4960;
             margin-bottom: 0;
         }
         span{
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            color: #fff;
+            color: #FF4960;
         }
     }
 
@@ -197,22 +201,23 @@
         border-radius: 10px;
         display: flex;
         place-items: center;
-        background: #00BE37;
+        background: #D4FDE5;
         justify-content: space-around;
+        border: 1px solid #00CE96;
         p {
             font-size: 19px;
             font-style: normal;
             font-weight: 700;
             letter-spacing: .4px;
             line-height: 24px;
-            color: #fff;
+            color: #00CE96;
             margin-bottom: 0;
         }
         span{
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            color: #fff;
+            color: #00CE96;
         }
     }
 }

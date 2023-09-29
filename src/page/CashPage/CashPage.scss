@@ -1,0 +1,99 @@
+.cash_page{
+    background-color: #F3F6FA;
+    padding-bottom: 30px;
+    min-height: 86vh;
+    .blog_header {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px #CCDAEC;
+        position: relative;
+        padding: 20px 0;
+        height: 90px;
+        display: flex;
+        align-items: center;
+    }
+    .blog {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .blog__add {
+            display: flex;
+            .add__btn {
+                background: #61D2A1;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 213px;
+                height: 54px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: #EDF6FD;
+                border: none;
+                outline: none;
+                margin-left: 20px;
+                cursor: pointer;
+    
+                img {
+                    margin-right: 14px;
+                    font-weight: 400;
+                    line-height: 19px;
+                    text-align: center;
+                    color: #EDF6FD;
+                }
+            }
+        }
+    
+        .tab_list {
+            display: flex;
+    
+            ul {
+                padding-left: 0;
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                gap: 70px;
+                padding-left: 10px;
+                position: relative;
+    
+                .list_item {
+                    padding-left: 0;
+                    margin-bottom: 0;
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: #A0ABBE;
+                    cursor: pointer;
+                    padding-bottom: 5px;
+                    list-style: none !important;
+    
+                }
+                .active {
+                    font-family: 'SF Pro Display';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: #00827B;
+                    cursor: pointer;
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid #00827B;
+                    list-style: none !important;
+                }
+            }
+        }
+    
+        .tab_content {
+            background: #FFFFFF;
+            box-shadow: 0px 2px 4px #CCDAEC;
+            border-radius: 20px;
+            width: 100%;
+            max-height: 571px;
+            padding: 32px 20px;
+        }
+    }
+}
