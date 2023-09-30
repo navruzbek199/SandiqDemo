@@ -23,7 +23,7 @@ const ArxiPage = () => {
                                     Продукты 
                                 </li>
                                 <li onClick={() => setTab(3)} className={tab === 3 ? 'active' : "list_item"}>
-                                    Смета
+                                    История
                                 </li>
                             </ul>
                         </div>

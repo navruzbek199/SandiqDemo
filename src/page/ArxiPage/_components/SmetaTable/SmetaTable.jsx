@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import SmetaTableItem from './SmetaTableItem';
-const SmetaTable = ({ options, setTotalPrice, index}) => {
+const SmetaTable = ({ options, setTotalPrice, index, getSmeta}) => {
     const [count, setCount] = useState([{}])
     const [name, setName] = useState("")
     const [allprice, setAllPrice] = useState(0)
     const lastIndex = count?.length - 1
 
 
-
+    console.log(getSmeta, "nima");
     // console.log(count);
 
     useEffect(() => {

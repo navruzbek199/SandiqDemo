@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SelectSearch from "react-select-search";
+import apiRoot from '../../../../store/apiRoot';
 const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice,allprice,setTotalPrice}) => {
     const [size, setSize] = useState()
     const active = index === lastIndex
@@ -33,8 +34,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
     }
     const allPriceTotal = inputValues?.amount * inputValues?.price
 
-
-    
+   
 
     return (
         <>
