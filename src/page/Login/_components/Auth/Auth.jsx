@@ -57,7 +57,7 @@ const Auth = () => {
               navigate("update");
             }
           }
-          if(res?.data?.role === "Kasser"){
+          if(res?.data?.role === "kasser"){
             if(res?.data?.status === true){
               navigate("cash")
             }else {

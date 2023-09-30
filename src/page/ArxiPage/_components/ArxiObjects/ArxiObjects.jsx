@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './ArxiObjects.scss'
 import { Container } from 'react-bootstrap'
 import apiRoot from '../../../../store/apiRoot'
+import { useNavigate } from 'react-router-dom'
 const ArxiObjects = () => {
     const token = localStorage.getItem('access_token')
     const [objects, setObjects] = useState()
-
+    const navigate = useNavigate()
     const AllObject = () => {
         apiRoot.get('objects/list', {
             headers: {
@@ -54,7 +55,7 @@ const ArxiObjects = () => {
                                                 <p>+{item?.worker?.phone}</p>
                                             </li>
                                             <li className='form_btn_edit'>
-                                                <button type='submit' className='in'>
+                                                <button type='submit' className='in' onClick={() => navigate(`arxiobjs/${item?.id}`)}>
                                                     Добавить смета 
                                                 </button>
                                             </li>
