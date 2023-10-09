@@ -58,6 +58,9 @@ const ArxiObjects = () => {
                                                 <button type='submit' className='in' onClick={() => navigate(`arxiobjs/${item?.id}`)}>
                                                     Добавить смета 
                                                 </button>
+                                                <button type='submit' className='save' onClick={() => navigate(`arxismeta/${item?.id}`)}>
+                                                     Моя  смета 
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>

@@ -13,7 +13,7 @@ const ArxiObjectItem = () => {
     const [options, setOptions] = useState([])
     const [getUnit, setGetUnit] = useState()
     const [size, setSize] = useState()
-    const [getSmeta, setGetSmeta] = useState()
+    
     const Units = () => {
         apiRoot.get(`products/units`, {
             headers: {
@@ -48,21 +48,7 @@ const ArxiObjectItem = () => {
         Units()
     }, [])
 
-    const GetIdSmeta = () => {
-        apiRoot.get(`products/set/list/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((res) => {
-            console.log(res?.data, "data get");
-            setGetSmeta(res?.data)
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
-    useEffect(() =>{
-        GetIdSmeta()
-    }, [])
+    
 
 
 
@@ -88,7 +74,7 @@ const ArxiObjectItem = () => {
             total_price: totalPrice
         }
         console.log(data,"data sbmot");
-        apiRoot.post(`products/product/set`, data, {
+        apiRoot.post(`products/create/set`, data, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -97,6 +83,9 @@ const ArxiObjectItem = () => {
         }).catch((err) => {
             console.log(err);
         })
+
+
+        
     }
     return (
         <div className='arxi_obj_item'>
@@ -122,7 +111,7 @@ const ArxiObjectItem = () => {
             <Container fluid="xxl">
                 {
                     arr.map((item,index) => (
-                        <SmetaTable options={options} setTotalPrice={setTotalPrice} index={index} getSmeta={getSmeta}/>
+                        <SmetaTable options={options} setTotalPrice={setTotalPrice} index={index} />
                     ))
                 }
                 <div className='btns_table'>

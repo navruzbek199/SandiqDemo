@@ -16,6 +16,7 @@ import ArxiPage from "../page/ArxiPage/ArxiPage";
 import CashPage from "../page/CashPage/CashPage";
 import Cash from "../role/Cash/Cash";
 import ArxiObjectItem from "../page/ArxiPage/_components/ArxiObjectItem/ArxiObjectItem";
+import ArxiObjSmeta from "../page/ArxiPage/_components/ArxiObjSmeta/ArxiObjSmeta";
 const RouterPage = () => {
   const token = localStorage.getItem("access_token");
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ const RouterPage = () => {
         <Route path="/arxitector" element={<Arxitektor />}>
           <Route index element={<ArxiPage />} />
           <Route path="/arxitector/arxiobjs/:id" element={<ArxiObjectItem/>} />
+          <Route path="/arxitector/arxismeta/:id" element={<ArxiObjSmeta/>} />
         </Route>
         <Route path="/cash" element={<Cash />}>
           <Route index element={<CashPage />} />

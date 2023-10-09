@@ -87,7 +87,7 @@ const Worker = () => {
                         </thead>
                         <tbody className='table__body'>
                             {
-                                allworker?.filter(elem => elem?.role !== "driver")?.map((item, index) => (
+                                allworker?.map((item, index) => (
                                     <WorkerItem key={item?.id} item={item} index={index} setAllworker={setAllworker} />
                                 ))
                             }
