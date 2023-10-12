@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ArxiObjSmeta.scss'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 import apiRoot from '../../../../store/apiRoot'
 import { Link, useParams } from 'react-router-dom'
@@ -31,23 +31,24 @@ const ArxiObjSmeta = () => {
             console.log(err);
         })
     }
-    const GetDownload = () => {
-        apiRoot.get(`products/set/download/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((res) => {
-            console.log(res?.data, "download");
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
+    // const GetDownload = () => {
+    //     apiRoot.get(`products/set/download/${id}`, {
+    //         headers: {
+    //             Authorization: `Bearer ${token}`
+    //         }
+    //     }).then((res) => {
+    //         console.log(res?.data, "download");
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     })
+    // }
     useEffect(() => {
         GetIdSmeta()
     }, [])
     useEffect(() => {
         getIdShed()
     }, [])
+
 
 
     return (
@@ -94,7 +95,7 @@ const ArxiObjSmeta = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {elem?.products?.map((item, index) => (
+                                        {elem?.products?.filter((_, index) => index > 0)?.map((item, index) => (
                                             <tr key={item?.id}>
                                                 <td>
                                                     {index + 1}
@@ -139,11 +140,6 @@ const ArxiObjSmeta = () => {
                     <span>
                         {(getSmeta?.total_price)} so'm
                     </span>
-                </div>
-                <div className="download">
-                    <a download={""} onClick={GetDownload}>
-                        Yuklab olish
-                    </a>
                 </div>
             </Container>
 
