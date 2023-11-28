@@ -104,7 +104,7 @@ const Worker = () => {
                     </div>
                     <form onSubmit={(e) => onSubmit(e)}>
                         <div className="form_group">
-                            <label>Fullname*</label>
+                            <label>ФИО*</label>
                             <input type="text"
                                 onChange={(e) => setFullname(e.target.value)}
                                 autoComplete="off"
@@ -112,7 +112,7 @@ const Worker = () => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Username*</label>
+                            <label>Имя пользователя*</label>
                             <input type="text"
                                 onChange={(e) => setUsername(e.target.value)}
                                 autoComplete="off"
@@ -120,7 +120,7 @@ const Worker = () => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Role*</label>
+                            <label>Роль*</label>
                             <input type="text"
                                 onChange={(e) => setRole(e.target.value)}
                                 autoComplete="off"
@@ -128,11 +128,11 @@ const Worker = () => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Phone Number*</label>
+                            <label>Номер телефона*</label>
                             <InputMask
                                 type="text"
                                 name='phoneNumber'
-                                placeholder='Phone Number'
+                                placeholder='Номер телефона'
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                                 required
                                 mask="+\9\9\8\(99) 999-99-99"

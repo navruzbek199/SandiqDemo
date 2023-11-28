@@ -31,11 +31,11 @@ const SmetaTable = ({ options, setTotalPrice, index, getSmeta}) => {
                 <thead>
                     <tr>
                         <th className='th_first'>№</th>
-                        <th>Tovar nomi</th>
-                        <th>O'lchov birligi</th>
-                        <th>Soni</th>
-                        <th>Narxi</th>
-                        <th>Umumiy narxi</th>
+                        <th>Название продукта</th>
+                        <th>Единица</th>
+                        <th>Количество</th>
+                        <th>Стоимость</th>
+                        <th>Общая стоимость</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,10 +49,10 @@ const SmetaTable = ({ options, setTotalPrice, index, getSmeta}) => {
             </table>
             <div className="form_text">
                 <p>
-                    Umumiy narxi
+                    Общая стоимость
                 </p>
                 <span>
-                    {allprice?.toLocaleString()} so'm
+                    {allprice?.toLocaleString()} сум
                 </span>
             </div>
         </div>

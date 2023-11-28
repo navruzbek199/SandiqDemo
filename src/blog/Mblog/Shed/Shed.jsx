@@ -277,7 +277,7 @@ const Shed = () => {
           </div>
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="form_group">
-              <label>Name*</label>
+              <label>Имя*</label>
               <input type="text"
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="off"
@@ -285,7 +285,7 @@ const Shed = () => {
               />
             </div>
             <div className="form_group">
-              <label>Address*</label>
+              <label>Адрес*</label>
               <input type="text"
                 onChange={(e) => setAddress(e.target.value)}
                 autoComplete="off"
@@ -293,14 +293,14 @@ const Shed = () => {
               />
             </div>
             <div className="form_group_select">
-              <label>Worker*</label>
+              <label>Сотрудника*</label>
               <div className="form_control">
                 <SelectSearch
                   options={options}
                   value={value}
                   onChange={setValue}
                   search
-                  placeholder="Ushbu skladga xodimni tayinlang"
+                  placeholder="Назначьте сотрудника на этот склад"
                 />
               </div>
             </div>
@@ -335,7 +335,7 @@ const Shed = () => {
           </div>
           <form onSubmit={(e) => EditShed(e)}>
             <div className="form_group">
-              <label>Name*</label>
+              <label>Имя*</label>
               <input type="text"
                 onChange={(e) => setChangeName(e.target.value)}
                 value={changeName}
@@ -344,7 +344,7 @@ const Shed = () => {
               />
             </div>
             <div className="form_group">
-              <label>Address*</label>
+              <label>Адрес*</label>
               <input type="text"
                 onChange={(e) => setChangeAddress(e.target.value)}
                 value={changeAddress}
@@ -353,14 +353,14 @@ const Shed = () => {
               />
             </div>
             <div className="form_group_select">
-              <label>Worker*</label>
+              <label>Сотрудника*</label>
               <div className="form_control">
                 <SelectSearch
                   options={options}
                   value={changeValue}
                   onChange={setChangeValue}
                   search
-                  placeholder="Ushbu skladga xodimni tayinlang"
+                  placeholder="Назначьте сотрудника на этот склад"
                 />
               </div>
             </div>

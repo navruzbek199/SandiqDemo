@@ -113,7 +113,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                 <td col-md-1>{item?.username}</td>
                 <td col-md-1>
                     <div className={item?.role === "s_admin" ? "type_1" : item?.role === "Prorap" ? "type_2" : item?.role === "expeditor" ? "type_3" : item?.role === "Kasser" ? "type_4" : item?.role === "arxitektor" ? "type_5" : item?.role === "driver" ? "type_6" : null}>
-                        {item?.role}
+                        {item?.role === "s_admin" ? "Менеджер склада" : item?.role === "Prorap" ? "Прораб" : item?.role === "expeditor" ? "Экспедитор" : item?.role === "Kasser" ?  "Кассир" : item?.role === "arxitektor" ? "Архитектор" : item?.role === "driver" ? "Водитель" : null}
                     </div>
                 </td>
                 <td col-md-1>
@@ -149,11 +149,11 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                     </div>
                     <div className="form_code">
                         <div className="login_code">
-                            <p>Username</p>
+                            <p>Логин</p>
                             <span>{getIdWorker?.username}</span>
                         </div>
                         <div className="login_code">
-                            <p>Password</p>
+                            <p>Пароль</p>
                             {
                                 showNumber ? (loading ? <p>loading...</p> : <p>{codeGet?.password}</p>) : <button onClick={() => GetCode(getIdWorker?.id)}>Временный пароль</button>
                             }
@@ -176,7 +176,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                     </div>
                     <form onSubmit={(e) => onSubmit(e)}>
                         <div className="form_group">
-                            <label>Fullname*</label>
+                            <label>ФИО*</label>
                             <input type="text"
                                 onChange={(e) => setChangeName(e.target.value)}
                                 value={changeName}
@@ -185,7 +185,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Username*</label>
+                            <label>Имя пользователя*</label>
                             <input type="text"
                                 onChange={(e) => setChangeUserName(e.target.value)}
                                 value={changeUserName}
@@ -194,7 +194,7 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Role*</label>
+                            <label>Роль*</label>
                             <input type="text"
                                 onChange={(e) => setChangeRole(e.target.value)}
                                 value={changeRole}
@@ -203,11 +203,11 @@ const WorkerItem = ({ index, item, setAllworker }) => {
                             />
                         </div>
                         <div className="form_group">
-                            <label>Phone Number*</label>
+                            <label>Номер телефона*</label>
                             <InputMask
                                 type="text"
                                 name='phoneNumber'
-                                placeholder='Phone Number'
+                                placeholder='Номер телефона'
                                 onChange={(e) => setChangePhone(e.target.value)}
                                 value={changePhone}
                                 required

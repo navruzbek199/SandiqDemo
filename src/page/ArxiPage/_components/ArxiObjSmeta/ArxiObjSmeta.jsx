@@ -49,7 +49,24 @@ const ArxiObjSmeta = () => {
         getIdShed()
     }, [])
 
-
+    const onButtonClick = () => { 
+        // using Java Script method to get PDF file 
+        fetch(`https://e-work.up.railway.app/products/set/download/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(response => { 
+            response.blob().then(blob => { 
+                // Creating new object of PDF file 
+                const fileURL = window.URL.createObjectURL(blob); 
+                // Setting various property values 
+                let alink = document.createElement('a'); 
+                alink.href = fileURL; 
+                alink.download = 'Smeta.pdf'; 
+                alink.click(); 
+            }) 
+        }) 
+    } 
 
     return (
         <div className='arxi_obj_smeta'>
@@ -87,11 +104,11 @@ const ArxiObjSmeta = () => {
                                     <thead>
                                         <tr>
                                             <th className='th_first'>№</th>
-                                            <th>Tovar nomi</th>
-                                            <th>O'lchov birligi</th>
-                                            <th>Soni</th>
-                                            <th>Narxi</th>
-                                            <th>Umumiy narxi</th>
+                                            <th>Название продукта</th>
+                                            <th>Единица</th>
+                                            <th>Количество</th>
+                                            <th>Стоимость</th>
+                                            <th>Общая стоимость</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -125,7 +142,7 @@ const ArxiObjSmeta = () => {
                         }
                         <div className="form_text">
                             <p>
-                                Umumiy narxi:
+                            Общая стоимость:
                             </p>
                             <span>
                                 {Number(item?.total_price)?.toLocaleString()}
@@ -135,12 +152,15 @@ const ArxiObjSmeta = () => {
                 ))}
                 <div className="form_text_all">
                     <p>
-                        Umumiy narxi:
+                    Общая стоимость:
                     </p>
                     <span>
-                        {(getSmeta?.total_price)} so'm
+                        {(getSmeta?.total_price)?.toLocaleString()} сум
                     </span>
                 </div>
+                <button className='download_smeta' onClick={onButtonClick}>
+                    Загрузите
+                </button>
             </Container>
 
         </div>

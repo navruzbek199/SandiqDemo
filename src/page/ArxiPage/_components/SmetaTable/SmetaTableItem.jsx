@@ -49,7 +49,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
                         <input
                             type="text"
                             name='name'
-                            placeholder='Tovar nomi kiriting'
+                            placeholder='Введите название продукта'
                             disabled={!active}
                             onChange={(e) => onChange(e)}
                         />
@@ -62,7 +62,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
                             value={size}
                             onChange={setSize}
                             search
-                            placeholder="O'lchov birligi tanlang !"
+                            placeholder="Выберите единицу!"
                             disabled={!active}
 
                         />
@@ -72,7 +72,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
                     <div className="form_group">
                         <input
                             type="number"
-                            placeholder='Soni kiriting !'
+                            placeholder='Введите количество !'
                             onChange={(e) => onChange(e)}
                             name='amount'
                             disabled={!active}
@@ -84,7 +84,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
                     <div className="form_group">
                         <input
                             type="number"
-                            placeholder='Narxini kiriting !'
+                            placeholder='Введите цену !'
                             onChange={(e) => onChange(e)}
                             name='price'
                             disabled={!active}
@@ -96,7 +96,7 @@ const SmetaTableItem = ({options,item,index,lastIndex,setCount,count,setAllPrice
                     <div className="form_group_cost">
                         {
                             active ? 
-                            <button className='btn' onClick={sub}>Qo`shish</button> :
+                            <button className='btn' onClick={sub}>Добавить</button> :
 
                             allPriceTotal?.toLocaleString()
                         }

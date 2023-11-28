@@ -117,13 +117,13 @@ const ArxiObjectItem = () => {
                 <div className='btns_table'>
                     <button className='add__btn' onClick={addSection}>
                         <img src={Add} alt="icon_add" />
-                        Bo'lim qo'shish
+                        Добавить раздел
                     </button>
                     <p>
-                        Obyekt uchun ketadigan umumiy summa: <span>{totalPrice?.toLocaleString()} so`m</span>
+                    Общая сумма за объект: <span>{totalPrice?.toLocaleString()} сум</span>
                     </p>
                     <button className='save_btn' onClick={onSubmit}>
-                        Saqlash
+                        Сохранить
                     </button>
                 </div>
             </Container>
