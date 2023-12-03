@@ -11,13 +11,12 @@ import 'firebase/compat/firestore'
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 const Objects = () => {
     firebase.initializeApp({
-        apiKey: "AIzaSyAweODwWAa3klYmgJLjNoBL9cvTJDn8BLI",
-        authDomain: "e-work-9007c.firebaseapp.com",
-        projectId: "e-work-9007c",
-        storageBucket: "e-work-9007c.appspot.com",
-        messagingSenderId: "626928554871",
-        appId: "1:626928554871:web:0de76fb140d232bd278772",
-        measurementId: "G-Y0RY9TZVLZ"
+        apiKey: "AIzaSyDz6FBBmMMGM3NUUqOh4qWHthx1H8j9Scc",
+        authDomain: "sandiq-e9271.firebaseapp.com",
+        projectId: "sandiq-e9271",
+        storageBucket: "sandiq-e9271.appspot.com",
+        messagingSenderId: "15875332214",
+        appId: "1:15875332214:web:3eee64e28baf3c0953a757"
     });
     const firestore = firebase.firestore()
     const [messages, loading] = useCollectionData(
