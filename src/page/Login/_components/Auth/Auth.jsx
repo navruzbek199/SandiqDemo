@@ -36,7 +36,7 @@ const Auth = () => {
         if (res?.status === 200) {
           localStorage.setItem("access_token", res?.data?.token);
           localStorage.setItem("role", res?.data?.role);
-          if (res?.data?.role === "m_admin") {
+          if (res?.data?.role === "admin") {
             if (res?.data?.status === true) {
               navigate("home");
             } else {
