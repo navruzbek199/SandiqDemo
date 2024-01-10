@@ -49,7 +49,7 @@ const SmsItem = ({ item, index }) => {
             <td col-md-2>{item?.amount} {item?.size}</td>
             <td col-md-2>
                 {item?.objects?.map((elem) => (
-                    <div className='d-flex align-items-center gap-2'>
+                    <div className='d-flex align-items-center gap-2' key={elem}>
                         <div className='shed_item mt-1'>
                             {elem?.warehouse?.name}
                             <span>
