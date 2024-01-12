@@ -19,6 +19,7 @@ const SmsHistory = () => {
     storageBucket: "sandiq-3aada.appspot.com",
     messagingSenderId: "145470829167",
     appId: "1:145470829167:web:d947c2a0f88e2f3054939a",
+    
   });
   const firestore = firebase.firestore();
   const [messages, loading] = useCollectionData(
